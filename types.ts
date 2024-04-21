@@ -61,3 +61,10 @@ export type EmailOptions = {
     bcc?: string
     attachments?: { filename: string; content: string | Buffer }[]
 }
+
+export type Option = {
+    value: string | number
+    display?: string | number
+    selected?: boolean
+    disabled?: boolean
+}
