@@ -1,0 +1,56 @@
+.input {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	justify-content: start;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: var(--gap-1);
+	color: var(--foreground-200);
+}
+.input label {
+	font-size: var(--paragraph-size-1);
+}
+
+.input .__input__ {
+	width: 100%;
+	position: relative;
+}
+
+.input .error {
+	color: var(--error);
+	font-size: var(--paragraph-size-1);
+}
+
+.input input {
+	width: 100%;
+	height: 45px;
+	padding: 0 15px;
+	background: var(--background-200);
+	color: var(--foreground-100);
+	border-radius: var(--form-element-radius);
+	border: var(--light-border);
+	outline: var(--light-border);
+	outline-color: var(--background-200);
+	font-size: var(--paragraph-size-1);
+}
+
+.input input.inputError {
+	border-color: var(--error);
+}
+
+.input input:focus {
+	outline: var(--outline);
+}
+
+.input .error:empty {
+	display: none;
+}
+
+.input input:-webkit-autofill,
+.input input:-webkit-autofill:hover,
+.input input:-webkit-autofill:focus,
+.input input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px var(--background-400) inset !important;
+	-webkit-text-fill-color: var(--foreground-100) !important;
+}

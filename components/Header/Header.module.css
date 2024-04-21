@@ -1,0 +1,16 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: var(--header-height);
+	width: 100%;
+	padding: 0 var(--body-padding);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	backdrop-filter: blur(10px);
+	background-color: rgba(var(--background-100-rgb), 0.5);
+}

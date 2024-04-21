@@ -1,0 +1,18 @@
+.ant-notification-notice-wrapper {
+	/* background-color: rgba(var(--background-100-rgb), 0.84); */
+	background-color: rgba(var(--background-100-rgb), 0.5) !important;
+	border: var(--light-border);
+	backdrop-filter: blur(10px) !important;
+	border-radius: var(--form-element-radius);
+}
+
+.ant-notification-notice * {
+	color: var(--foreground-100) !important;
+}
+
+.ant-notification-notice .ant-notification-notice-close {
+	filter: brightness(100) !important;
+}
+.ant-notification-notice-message {
+	font-weight: bolder;
+}

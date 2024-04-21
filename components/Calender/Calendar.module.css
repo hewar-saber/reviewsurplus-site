@@ -1,0 +1,183 @@
+.calendarContainer {
+	width: 100%;
+	border: var(--light-border);
+	border-radius: var(--card-radius);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.calendarContainer.loading::before {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	content: "";
+	background: rgba(var(--background-100-rgb), 0.7);
+	z-index: 2;
+	border-radius: var(--card-radius);
+}
+.calendarContainer.loading::after {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	content: "";
+	background: url("/icons/loading2.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: var(--rotate);
+	z-index: 3;
+}
+
+.calendarContainer .details {
+	width: 100%;
+	min-height: 40px;
+	padding: var(--card-padding);
+	display: flex;
+	align-items: center;
+	font-size: var(--paragraph-size-2);
+	color: var(--foreground-100);
+	border-bottom: var(--light-border);
+}
+
+.calendarContainer .header {
+	padding: var(--card-padding);
+	border-bottom: var(--light-border);
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-1);
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.calendarContainer .details {
+	flex-direction: column;
+	gap: var(--gap-1);
+	align-items: flex-start;
+	border: none;
+}
+
+.calendarContainer .details:empty {
+	display: none;
+}
+
+.calendarContainer .details .row {
+	display: flex;
+	flex-direction: column;
+	gap: inherit;
+}
+
+.calendarContainer .calendar {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-auto-rows: 30px;
+	padding: var(--card-padding);
+	gap: var(--gap-1);
+}
+.calendarContainer .calendar .days {
+	color: var(--foreground-100);
+	border-radius: var(--form-element-radius);
+	cursor: pointer;
+	user-select: none;
+	font-size: var(--paragraph-size-1);
+}
+
+.calendarContainer .headsUp {
+	text-align: left;
+	padding: var(--gap-2) 0;
+}
+
+.calendarContainer .calendar.close {
+	height: 0;
+}
+
+.calendarContainer .calendar .day,
+.calendarContainer .datePicker .date {
+	border: none;
+	background: none;
+	border: var(--light-border);
+	color: var(--foreground-100);
+	border-radius: var(--form-element-radius);
+	cursor: pointer;
+	user-select: none;
+	font-size: var(--paragraph-size-1);
+	opacity: 0.5;
+}
+
+.calendarContainer .calendar .day.available,
+.calendarContainer .datePicker .date {
+	opacity: 1;
+}
+.calendarContainer .calendar .day.emptyCell {
+	border: none;
+	cursor: initial;
+}
+
+.calendarContainer .footer {
+	width: 100%;
+	padding: var(--card-padding);
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	gap: var(--gap-1);
+	font-size: var(--paragraph-size-1);
+	color: var(--on-background-100);
+	border-top: var(--light-border);
+}
+
+
+.calendarContainer .datePicker {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-auto-rows: 40px;
+	padding: var(--card-padding);
+	gap: var(--gap-1);
+}
+
+.calendarContainer .inputs {
+	display: flex;
+	flex-direction: column;
+	padding: var(--card-padding);
+	gap: var(--gap-2);
+}
+
+.calendarContainer .inputs .flex {
+	display: inherit;
+	gap:inherit;
+}
+
+.calendarContainer .buttons {
+	display: flex;
+	gap: var(--gap-1);
+	padding: var(--card-padding);
+}
+
+.calendarContainer .buttons .button {
+	background: none;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+	border-radius: 50%;
+	background-image: url("/icons/arrow-down.svg");
+	border: var(--light-border);
+	cursor: pointer;
+}
+.calendarContainer .buttons .back {
+	transform: rotate(90deg);
+}
+.calendarContainer .buttons .forward {
+	transform: rotate(-90deg);
+}
+
+
+.confirmation {
+	padding: var(--card-padding);
+}
