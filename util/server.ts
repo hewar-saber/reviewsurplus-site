@@ -6,6 +6,7 @@ import util from 'util'
 import validator from 'validator'
 import nodemailer from 'nodemailer'
 import twilio, { Twilio } from 'twilio'
+import { log } from './googleCloud'
 
 export async function validateEmail(email: string): Promise<boolean> {
     const resolveMx = util.promisify(dns.resolveMx)
@@ -191,7 +192,7 @@ export async function tryWithoutException(
     try {
         await callback()
     } catch (error) {
-        console.error(error)
+        await log(error)
     }
 }
 

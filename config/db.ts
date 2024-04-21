@@ -2,7 +2,6 @@ import 'server-only'
 import mysql from 'mysql2/promise'
 
 export default async function connect(): Promise<mysql.Connection> {
-    console.log(process.env.DB_PASSWORD)
     try {
         const connection = await mysql.createConnection({
             host: process.env.DB_HOST,
