@@ -61,6 +61,13 @@ async function fetchSlots(date: Date) {
 const formatTime = (date: Date | null) =>
     date ? dayjs(date).format('HH:mm') : ''
 
+enum LoadingSections {
+    Days,
+    Remarketing,
+    Booking,
+    Slots,
+    All
+}
 export default function Calendar({
     fireNotification,
     description
@@ -83,7 +90,7 @@ export default function Calendar({
 
     const captchaRef = useRef<ReCAPTCHA>(null)
 
-    const [loading, setLoading] = useState<boolean>(true)
+    const [loading, setLoading] = useState<LoadingSections | null>(null)
 
     const [dates, setDates] = useState<Date[]>(getDaysInMonth(chosenDate))
     const [slots, setSlots] = useState<TimeSlot[]>([])
@@ -108,7 +115,8 @@ export default function Calendar({
     }
 
     const updateDaysWithSlots = async () => {
-        setLoading(true)
+        if (loading === LoadingSections.Days) return
+        setLoading(LoadingSections.Days)
         try {
             const slots = await fetchDaysWithSlots()
             setDaysWithSlots(slots)
@@ -120,7 +128,7 @@ export default function Calendar({
                 error: true
             })
         } finally {
-            setLoading(false)
+            setLoading(null)
         }
     }
 
@@ -133,7 +141,8 @@ export default function Calendar({
     }
 
     const bookCall = async () => {
-        setLoading(() => true)
+        if (loading === LoadingSections.Booking) return
+        setLoading(() => LoadingSections.Booking)
         setMessages({})
         if (!captchaRef.current?.getValue()) {
             fireNotification({
@@ -141,7 +150,6 @@ export default function Calendar({
                 description: 'Please complete the captcha to proceed.',
                 error: true
             })
-            setLoading(() => false)
             return
         }
 
@@ -188,12 +196,13 @@ export default function Calendar({
                 error: true
             })
         } finally {
-            setLoading(() => false)
+            setLoading(null)
         }
     }
 
     const submitDay = async (date: Date) => {
-        setLoading(() => true)
+        if (loading === LoadingSections.Slots) return
+        setLoading(() => LoadingSections.Slots)
 
         try {
             const slots = await fetchSlots(date)
@@ -214,13 +223,13 @@ export default function Calendar({
                 error: true
             })
         } finally {
-            setLoading(() => false)
+            setLoading(() => null)
         }
     }
 
     const sendDataToRemarketing = async () => {
-        if (loading) return
-        setLoading(() => true)
+        if (loading === LoadingSections.Remarketing) return
+        setLoading(() => LoadingSections.Remarketing)
 
         try {
             const response = await fetch(API_URLS.REMARKETING, {
@@ -251,7 +260,7 @@ export default function Calendar({
                 error: true
             })
         } finally {
-            setLoading(() => false)
+            setLoading(() => null)
         }
     }
 
@@ -286,6 +295,11 @@ export default function Calendar({
         [Steps.Confirmation]: bookCall
     }[step]
 
+    const isFullscreenLoading =
+        loading === LoadingSections.All ||
+        (loading === LoadingSections.Days && step !== Steps.EnterDetails) ||
+        loading === LoadingSections.Slots
+
     return (
         <form
             onSubmit={(e: FormEvent<HTMLFormElement>) => {
@@ -296,7 +310,7 @@ export default function Calendar({
                 handleSubmit()
             }}
             className={`${styles.calendarContainer} ${
-                loading ? styles.loading : ''
+                isFullscreenLoading ? styles.loading : ''
             }`}
         >
             <div className={styles.header}>
@@ -559,6 +573,10 @@ export default function Calendar({
                             e.preventDefault()
                         }
                     }}
+                    loading={
+                        loading === LoadingSections.Booking ||
+                        loading === LoadingSections.Remarketing
+                    }
                 >
                     {step === Steps.Confirmation ? 'Submit' : 'Next'}
                 </Button>
