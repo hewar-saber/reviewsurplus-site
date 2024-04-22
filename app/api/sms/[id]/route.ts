@@ -91,7 +91,7 @@ async function reminderFirstSMS(
 
     const { id } = data
 
-    if (!validator.isInt(id)) {
+    if (!validator.isInt(`${id}`)) {
         return NextResponse.json(
             { id: 'Time slot not found.' },
             { status: 400 }
@@ -162,7 +162,7 @@ async function reminder24HourSMS(
 
     const { id } = data
 
-    if (!validator.isInt(id)) {
+    if (!validator.isInt(`${id}`)) {
         return NextResponse.json(
             { id: 'Time slot not found.' },
             { status: 400 }
@@ -212,7 +212,7 @@ async function reminder1HourSMS(
 
     const { id } = data
 
-    if (!validator.isInt(id)) {
+    if (!validator.isInt(`${id}`)) {
         return NextResponse.json(
             { id: 'Time slot not found.' },
             { status: 400 }
