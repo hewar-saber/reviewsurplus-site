@@ -114,6 +114,35 @@ async function reminderFirstEmail(
 
     const { email, firstName, start, end, timezone: timeZone } = slot
 
+    const html = reminderFirstEmailHTML(firstName, start as Date, timeZone)
+
+    const calendarFileContent = generateCalendarFile(
+        'Discovery Call',
+        'Discovery call to discuss your marketing needs.',
+        start as Date,
+        end as Date
+    )
+
+    const formattedDate = dayjs(start).format('MMMM D, YYYY')
+
+    await sendHTMLEmail({
+        from: {
+            name: 'Review Surplus',
+            email: process.env.SALES_EMAIL,
+            password: process.env.SALES_EMAIL_PASSWORD
+        },
+        bcc: process.env.SALES_EMAIL,
+        subject: `Your Requested Strategy Session: Confirmed for ${formattedDate}`,
+        to: email,
+        html,
+        attachments: [
+            {
+                filename: 'appointment.ics',
+                content: calendarFileContent
+            }
+        ]
+    })
+
     const now = new Date()
 
     const diff = dayjs(start).diff(now, 'hours')
@@ -145,35 +174,6 @@ async function reminderFirstEmail(
         'POST',
         'websitebooking'
     )
-
-    const html = reminderFirstEmailHTML(firstName, start as Date, timeZone)
-
-    const calendarFileContent = generateCalendarFile(
-        'Discovery Call',
-        'Discovery call to discuss your marketing needs.',
-        start as Date,
-        end as Date
-    )
-
-    const formattedDate = dayjs(start).format('MMMM D, YYYY')
-
-    await sendHTMLEmail({
-        from: {
-            name: 'Review Surplus',
-            email: process.env.SALES_EMAIL,
-            password: process.env.SALES_EMAIL_PASSWORD
-        },
-        bcc: process.env.SALES_EMAIL,
-        subject: `Your Requested Strategy Session: Confirmed for ${formattedDate}`,
-        to: email,
-        html,
-        attachments: [
-            {
-                filename: 'appointment.ics',
-                content: calendarFileContent
-            }
-        ]
-    })
 
     return NextResponse.json({ message: 'Email Sent successfully.' })
 }
@@ -211,18 +211,6 @@ async function reminder24HourEmail(
 
     const { email, firstName, start, timezone, end } = slot
 
-    const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
-
-    const url = `${process.env.API_URL}/emails/reminder-1-hour`
-
-    await createGoogleCloudTask(
-        anHourBeforeStart,
-        { id },
-        url,
-        'POST',
-        'websitebooking'
-    )
-
     const html = reminder24HourEmailHTML(firstName, start as Date, timezone)
 
     await sendHTMLEmail({
@@ -247,6 +235,18 @@ async function reminder24HourEmail(
             }
         ]
     })
+
+    const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
+
+    const url = `${process.env.API_URL}/emails/reminder-1-hour`
+
+    await createGoogleCloudTask(
+        anHourBeforeStart,
+        { id },
+        url,
+        'POST',
+        'websitebooking'
+    )
 
     return NextResponse.json({ message: 'Email Sent successfully.' })
 }

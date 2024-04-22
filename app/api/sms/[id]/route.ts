@@ -109,6 +109,8 @@ async function reminderFirstSMS(
     const { firstName, start, timezone, phone } = slot
     const sms = confirmationSMSMessage(firstName, start as Date, timezone)
 
+    await sendSMS(phone, sms)
+
     const now = new Date()
 
     const diff = dayjs(start).diff(now, 'hours')
@@ -140,8 +142,6 @@ async function reminderFirstSMS(
         'POST',
         'websitebooking'
     )
-
-    await sendSMS(phone, sms)
 
     return NextResponse.json({ message: 'SMS Sent successfully.' })
 }
@@ -178,6 +178,9 @@ async function reminder24HourSMS(
     }
     const { phone, start } = slot
 
+    const sms = reminder24HSMSMessage()
+    await sendSMS(phone, sms)
+
     const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
 
     const url = `${process.env.API_URL}/emails/reminder-1-hour`
@@ -189,9 +192,6 @@ async function reminder24HourSMS(
         'POST',
         'websitebooking'
     )
-
-    const sms = reminder24HSMSMessage()
-    await sendSMS(phone, sms)
 
     return NextResponse.json({ message: 'SMS Sent successfully.' })
 }
