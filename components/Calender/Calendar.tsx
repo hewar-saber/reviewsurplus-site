@@ -180,6 +180,8 @@ export default function Calendar({
                     phone: ''
                 })
                 reset()
+                setStep(Steps.EnterDetails)
+
                 return
             }
             const json = await response.json()
