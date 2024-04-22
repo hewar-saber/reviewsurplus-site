@@ -77,11 +77,14 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
                 const data = await upadtedContactResponse.json()
                 if (upadtedContactResponse.ok) {
-                    console.log('It was a success')
                     crmContact = {
                         ...crmContact,
                         ...data
                     }
+                } else {
+                    await log("Couldn't update contact in CRM")
+                    await log(JSON.stringify(data))
+                    return HTTP_RESPONSES.NO_CONTENT
                 }
             } else {
                 const response = await addContactToCRM({
