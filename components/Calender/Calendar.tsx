@@ -242,6 +242,7 @@ export default function Calendar({
             })
             if (!response.ok) {
                 const data = await response.json()
+                setMessages(data)
                 fireNotification({
                     message: data.message ?? 'Something went wrong!',
                     description:
@@ -253,7 +254,7 @@ export default function Calendar({
 
             setMessages({})
             setStep(Steps.ChooseDay)
-        } catch {
+        } catch (error) {
             fireNotification({
                 message: 'Something went wrong!',
                 description: 'Something went wrong. Please try again later.',
