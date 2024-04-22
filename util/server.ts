@@ -238,6 +238,7 @@ export async function sendHTMLEmail(options: EmailOptions): Promise<boolean> {
         })
         return true
     } catch (error) {
+        await log(error)
         return false
     }
 }

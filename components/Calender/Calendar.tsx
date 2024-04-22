@@ -185,8 +185,21 @@ export default function Calendar({
             const json = await response.json()
             setMessages(json)
             if (json?.slot) {
-                setStep(1)
+                setStep(Steps.ChooseTime)
+                return
             }
+
+            if (json.message) {
+                fireNotification({
+                    message: json.message,
+                    description: "Couldn't book the call. Please try again.",
+                    error: true
+                })
+                return
+            }
+
+            scrollElement(slotErrorRef.current!)
+            setStep(Steps.EnterDetails)
             if (response.status >= 500) throw new Error()
         } catch {
             fireNotification({
@@ -269,11 +282,6 @@ export default function Calendar({
         getCsrf()
         updateDaysWithSlots()
     }, [])
-
-    useEffect(() => {
-        if (!messages.slot) return
-        scrollElement(slotErrorRef.current!)
-    }, [messages.slot])
 
     const title = {
         [Steps.EnterDetails]: 'Enter your details',

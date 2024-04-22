@@ -11,7 +11,7 @@ export default async function connect(): Promise<mysql.Connection> {
             port: 3306,
             ssl: {
                 rejectUnauthorized:
-                    process.env.NODE_ENV === 'production' &&
+                    (process.env.NODE_ENV === 'production' || 1) &&
                     process.env.DB_HOST !== 'Localhost'
             },
             timezone: 'Z'

@@ -121,7 +121,7 @@ async function reminderFirstEmail(
     if (diff < 24) {
         const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
 
-        const url = `${process.env.API_URL}/api/emails/reminder-1-hour`
+        const url = `${process.env.API_URL}/emails/reminder-1-hour`
 
         await createGoogleCloudTask(
             anHourBeforeStart,
@@ -136,7 +136,7 @@ async function reminderFirstEmail(
 
     const aDayBeforeStart = dayjs(start).subtract(1, 'day').toDate()
 
-    const url = `${process.env.API_URL}/api/emails/reminder-24-hours`
+    const url = `${process.env.API_URL}/emails/reminder-24-hours`
 
     await createGoogleCloudTask(
         aDayBeforeStart,
@@ -213,7 +213,7 @@ async function reminder24HourEmail(
 
     const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
 
-    const url = `${process.env.API_URL}/api/emails/reminder-1-hour`
+    const url = `${process.env.API_URL}/emails/reminder-1-hour`
 
     await createGoogleCloudTask(
         anHourBeforeStart,

@@ -20,6 +20,7 @@ export declare global {
             TWILIO_AUTH_TOKEN: string
             API_URL: string
             GOOGLE_CLOUD_TASK_API_KEY
+            EMAIL_SMTP_SERVER: string
         }
     }
 }
