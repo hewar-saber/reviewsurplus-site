@@ -162,7 +162,7 @@ export default function Calendar({
             captcha: captchaRef.current?.getValue() ?? ''
         }
         try {
-            const response = await fetch(`${process.env.API_URL}/booking`, {
+            const response = await fetch(`${API_URLS.BOOKING}`, {
                 method: 'POST',
                 body: JSON.stringify(body)
             })

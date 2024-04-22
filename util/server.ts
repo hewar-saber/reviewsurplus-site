@@ -200,6 +200,7 @@ export async function updateCRMContact(
     contact: Partial<Contact>,
     id: number
 ): Promise<Response> {
+    console.log('Updating contact', contact, id)
     const url = `${process.env.CRM_API_URL}/contacts/${id}`
 
     const response = await fetch(url, {

@@ -62,9 +62,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             const crmContactExists = crmContactResponse.ok
 
             let crmContact = null
-
             if (crmContactExists) {
                 crmContact = await crmContactResponse.json()
+                console.log(crmContact)
                 const upadtedContactResponse = await updateCRMContact(
                     {
                         company,
