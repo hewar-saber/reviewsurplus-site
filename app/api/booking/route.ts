@@ -158,6 +158,7 @@ function timeZoneErrors(timeZone: string): string | false {
 }
 
 async function captchaErrors(captcha: string): Promise<string | false> {
+    if (process.env.NODE_ENV === 'development') return false
     const isValid = await validateRecaptchaToken(captcha)
     return isValid ? false : 'Invalid Captcha'
 }

@@ -51,9 +51,15 @@ enum Steps {
     Confirmation
 }
 async function fetchSlots(date: Date) {
-    const response = await fetch(`/api/booking/${date.toISOString()}/slots`, {
-        cache: 'no-store'
-    })
+    const dateUTC = new Date(
+        Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+    )
+    const response = await fetch(
+        `/api/booking/${dateUTC.toISOString()}/slots`,
+        {
+            cache: 'no-store'
+        }
+    )
     if (!response.ok) throw new Error('Unable to get available dates')
     return (await response.json()) as TimeSlotResponse[]
 }
@@ -144,6 +150,7 @@ export default function Calendar({
         if (loading === LoadingSections.Booking) return
         setLoading(() => LoadingSections.Booking)
         setMessages({})
+        /*
         if (!captchaRef.current?.getValue()) {
             fireNotification({
                 message: 'Please complete the captcha.',
@@ -152,7 +159,7 @@ export default function Calendar({
             })
             return
         }
-
+        */
         await delay()
         const body: RequestBody = {
             ...values,
@@ -218,7 +225,6 @@ export default function Calendar({
     const submitDay = async (date: Date) => {
         if (loading === LoadingSections.Slots) return
         setLoading(() => LoadingSections.Slots)
-
         try {
             const slots = await fetchSlots(date)
             setStep(Steps.ChooseTime)
