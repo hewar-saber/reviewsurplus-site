@@ -102,8 +102,7 @@ export async function POST(request: Request) {
             },
             `${process.env.API_URL}/emails/reminder-first-email`,
             'POST',
-            'websitebooking',
-            id.toString()
+            'websitebooking'
         )
         await createTask(
             executeTime,
@@ -112,8 +111,7 @@ export async function POST(request: Request) {
             },
             `${process.env.API_URL}/sms/reminder-first-sms`,
             'POST',
-            'websitebooking',
-            id.toString()
+            'websitebooking'
         )
 
         await connection.commit()

@@ -173,7 +173,7 @@ export async function enrollContactInSequence(
 
     const body = {
         sequenceId,
-        fromEmail: process.env.SALES_EMAIL
+        fromEmail: process.env.CRM_EMAIL
     }
     const response = await fetch(url, {
         method: 'POST',

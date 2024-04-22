@@ -18,6 +18,22 @@ export async function POST(
         return HTTP_RESPONSES.NOT_FOUND
     }
 
+    const authorization = request.headers.get('authorization')
+
+    if (!authorization) {
+        return HTTP_RESPONSES.UNAUTHORIZED
+    }
+    const prefix = 'Bearer '
+    const hasBearerToken = authorization.startsWith(prefix)
+    if (!hasBearerToken) {
+        return HTTP_RESPONSES.UNAUTHORIZED
+    }
+    const token = authorization.slice(prefix.length)
+
+    if (token !== process.env.GOOGLE_CLOUD_TASK_API_KEY) {
+        return HTTP_RESPONSES.UNAUTHORIZED
+    }
+
     let connection: Connection | undefined
     try {
         const contact = await getCRMContact(Number(id))

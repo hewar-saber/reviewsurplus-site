@@ -3,7 +3,7 @@ import { Connection } from 'mysql2/promise'
 import { NextRequest, NextResponse } from 'next/server'
 
 import connect from '@/config/db'
-import { log } from '@/util/googleCloud'
+import createGoogleCloudTask, { log } from '@/util/googleCloud'
 import {
     confirmationSMSMessage,
     reminder1HSMSMessage,
@@ -12,6 +12,7 @@ import {
 import { missingCredentials } from '@/util/util'
 import validator from 'validator'
 import { sendSMS } from '@/util/server'
+import dayjs from 'dayjs'
 
 const sms = {
     'reminder-first-sms': {
@@ -49,7 +50,7 @@ export async function POST(
 
         const token = authorization.slice(prefix.length)
 
-        if (token !== process.env.API_BEARER_AUTH)
+        if (token !== process.env.GOOGLE_CLOUD_TASK_API_KEY)
             return NextResponse.json(
                 {},
                 { status: 401, statusText: 'Unauthorized' }
@@ -108,6 +109,88 @@ async function reminderFirstSMS(
     const { firstName, start, timezone, phone } = slot
     const sms = confirmationSMSMessage(firstName, start as Date, timezone)
 
+    const now = new Date()
+
+    const diff = dayjs(start).diff(now, 'hours')
+
+    if (diff < 24) {
+        const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
+
+        const url = `${process.env.API_URL}/api/sms/reminder-1-hour`
+
+        await createGoogleCloudTask(
+            anHourBeforeStart,
+            { id },
+            url,
+            'POST',
+            'websitebooking'
+        )
+
+        return NextResponse.json({ message: 'Email Sent successfully.' })
+    }
+
+    const aDayBeforeStart = dayjs(start).subtract(1, 'day').toDate()
+
+    const url = `${process.env.API_URL}/api/emails/reminder-24-hours`
+
+    await createGoogleCloudTask(
+        aDayBeforeStart,
+        { id },
+        url,
+        'POST',
+        'websitebooking'
+    )
+
+    await sendSMS(phone, sms)
+
+    return NextResponse.json({ message: 'SMS Sent successfully.' })
+}
+
+async function reminder24HourSMS(
+    request: NextRequest,
+    connection: Connection
+): Promise<NextResponse> {
+    const data = await request.json()
+    const credentials = ['id']
+
+    if (missingCredentials(data, credentials)) {
+        return NextResponse.json(
+            { message: 'Missing Credential' },
+            { status: 400, statusText: 'Missing Credential' }
+        )
+    }
+
+    const { id } = data
+
+    if (!validator.isInt(id)) {
+        return NextResponse.json(
+            { id: 'Time slot not found.' },
+            { status: 400 }
+        )
+    }
+
+    const slot = await getSlot(Number(id), connection)
+    if (!slot) {
+        return NextResponse.json(
+            { id: 'Time slot not found.' },
+            { status: 400 }
+        )
+    }
+    const { phone, start } = slot
+
+    const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
+
+    const url = `${process.env.API_URL}/api/emails/reminder-1-hour`
+
+    await createGoogleCloudTask(
+        anHourBeforeStart,
+        { id },
+        url,
+        'POST',
+        'websitebooking'
+    )
+
+    const sms = reminder24HSMSMessage()
     await sendSMS(phone, sms)
 
     return NextResponse.json({ message: 'SMS Sent successfully.' })
@@ -146,44 +229,6 @@ async function reminder1HourSMS(
     const { phone } = slot
 
     const sms = reminder1HSMSMessage()
-    await sendSMS(phone, sms)
-
-    return NextResponse.json({ message: 'SMS Sent successfully.' })
-}
-
-async function reminder24HourSMS(
-    request: NextRequest,
-    connection: Connection
-): Promise<NextResponse> {
-    const data = await request.json()
-    const credentials = ['id']
-
-    if (missingCredentials(data, credentials)) {
-        return NextResponse.json(
-            { message: 'Missing Credential' },
-            { status: 400, statusText: 'Missing Credential' }
-        )
-    }
-
-    const { id } = data
-
-    if (!validator.isInt(id)) {
-        return NextResponse.json(
-            { id: 'Time slot not found.' },
-            { status: 400 }
-        )
-    }
-
-    const slot = await getSlot(Number(id), connection)
-    if (!slot) {
-        return NextResponse.json(
-            { id: 'Time slot not found.' },
-            { status: 400 }
-        )
-    }
-    const { phone } = slot
-
-    const sms = reminder24HSMSMessage()
     await sendSMS(phone, sms)
 
     return NextResponse.json({ message: 'SMS Sent successfully.' })
