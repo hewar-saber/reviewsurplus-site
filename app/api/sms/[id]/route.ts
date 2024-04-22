@@ -128,12 +128,12 @@ async function reminderFirstSMS(
             'websitebooking'
         )
 
-        return NextResponse.json({ message: 'Email Sent successfully.' })
+        return NextResponse.json({ message: 'SMS Sent successfully.' })
     }
 
     const aDayBeforeStart = dayjs(start).subtract(1, 'day').toDate()
 
-    const url = `${process.env.API_URL}/emails/reminder-24-hours`
+    const url = `${process.env.API_URL}/sms/reminder-24-hours`
 
     await createGoogleCloudTask(
         aDayBeforeStart,
@@ -183,7 +183,7 @@ async function reminder24HourSMS(
 
     const anHourBeforeStart = dayjs(start).subtract(1, 'hour').toDate()
 
-    const url = `${process.env.API_URL}/emails/reminder-1-hour`
+    const url = `${process.env.API_URL}/sms/reminder-1-hour`
 
     await createGoogleCloudTask(
         anHourBeforeStart,
