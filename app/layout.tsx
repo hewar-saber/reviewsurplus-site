@@ -12,7 +12,7 @@ const description =
 const url = process.env.WEBSITE_URL
 const images = [
     {
-        url: 'https://reviewsurplus.com/images/og.png',
+        url: `${process.env.WEBSITE_URL}/images/og.png`,
         alt: title,
         width: 1000,
         height: 500
@@ -54,7 +54,10 @@ export const metadata: Metadata = {
         'Online reputation management tools',
         'Online reputation management software',
         'Online reputation management agency'
-    ]
+    ],
+    alternates: {
+        canonical: process.env.WEBSITE_URL
+    }
 }
 
 export default function RootLayout({
