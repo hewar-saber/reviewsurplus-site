@@ -68,11 +68,11 @@ export const metadata: Metadata = {
 export default function Page() {
     const title = "Patient's Favorite Dentist in Your Area? More 5-Star Reviews"
     const text =
-        'Become The Top Dental Practice In Town with a ton of new 5-star reviews. Book a call today to get the recognition you deserve.'
+        'Become the top dental practice in town with a ton of new 5-star reviews. Book a call today to get the recognition you deserve.'
     return (
         <NichePage title={title} text={text}>
             <img
-                src='/images/dental-practice-more-reviews.png'
+                src='/images/dental-practice-more-reviews.webp'
                 alt='Illustration of more Google reviews'
             />
         </NichePage>

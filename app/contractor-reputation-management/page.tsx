@@ -40,25 +40,25 @@ export const metadata: Metadata = {
         'Online reputation management tools',
         'Online reputation management software',
         'Online reputation management agency',
-        'roofing reputation management',
-        'roofing reviews',
-        'roofing reputation',
-        'roofing reputation management services',
-        'roofing reputation management companies',
-        'roofing reputation management tools',
-        'roofing reputation management software',
-        'roofing reputation management agency',
-        'roofing online reputation',
-        'roofing online reputation management',
-        'roofing online reputation monitoring',
-        'roofing online reputation repair',
-        'roofing online reputation management services',
-        'roofing online reputation management companies',
-        'roofing online reputation management tools',
-        'roofing online reputation management software',
-        '5-star reviews for roofers',
-        'Get more customers for roofers',
-        'Roofing marketing'
+        'Contractor reputation management',
+        'Contractor reviews',
+        'Contractor reputation',
+        'Contractor reputation management services',
+        'Contractor reputation management companies',
+        'Contractor reputation management tools',
+        'Contractor reputation management software',
+        'Contractor reputation management agency',
+        'Contractor online reputation',
+        'Contractor online reputation management',
+        'Contractor online reputation monitoring',
+        'Contractor online reputation repair',
+        'Contractor online reputation management services',
+        'Contractor online reputation management companies',
+        'Contractor online reputation management tools',
+        'Contractor online reputation management software',
+        '5-star reviews for contractors',
+        'Get more customers for contractors',
+        'Contractor marketing'
     ],
     alternates: {
         canonical: url
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 export default function Page() {
     const title = 'Get More Customers With More 5-Star Reviews'
     const text =
-        'Become The Top Roofer In Town with a ton of new 5-star reviews. Book a call today to get more customers.'
+        'Get more contracting clients + become the top contractor in town with a ton of new 5-star reviews. Book a call today.'
     return (
         <NichePage title={title} text={text}>
             <img
