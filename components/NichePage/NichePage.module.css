@@ -20,7 +20,7 @@
 
 .page .details .text h1 {
     font-size: var(--title-1);
-    color: var(--primary-100);
+    color: var(--foreground-100);
 }
 
 .page .details .text p {

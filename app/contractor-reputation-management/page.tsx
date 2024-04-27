@@ -72,7 +72,7 @@ export default function Page() {
     return (
         <NichePage title={title} text={text}>
             <img
-                src='/images/contractor-more-reviews.png'
+                src='/images/contractor-more-reviews.webp'
                 alt='Illustration of more Google reviews'
             />
         </NichePage>

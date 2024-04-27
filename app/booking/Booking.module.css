@@ -1,0 +1,11 @@
+.booking {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    padding: var(--body-padding);
+}
+
+.booking h1 {
+    font-size: var(--title-2);
+    color: var(--foreground-100);
+}

@@ -1,0 +1,21 @@
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: var(--gap-2);
+}
+
+.cards figure {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-1);
+	color: var(--foreground-200);
+}
+
+.cards figure figcaption {
+	font-size: var(--paragraph-size-1);
+	line-height: var(--line-height);
+}
+
+.cards figure b {
+	font-size: var(--paragraph-size-1);
+}

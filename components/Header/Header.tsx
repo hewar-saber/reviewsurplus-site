@@ -1,6 +1,7 @@
 import styles from './Header.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import CTA from '../CTA/CTA'
 
 export default function Header() {
     return (
@@ -13,6 +14,11 @@ export default function Header() {
                     src={'/images/logo.svg'}
                 ></Image>
             </Link>
+            <CTA
+                style={{
+                    maxWidth: '150px'
+                }}
+            />
         </header>
     )
 }

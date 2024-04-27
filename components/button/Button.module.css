@@ -16,14 +16,14 @@
 }
 
 .primary {
-	background: var(--primary-100);
+	background: var(--foreground-100);
 	color: var(--background-100);
 	border: 1px solid transparent;
 	position: relative;
 }
 .primary.loading {
 	font-size: 0;
-	color: var(--primary-100);
+	color: var(--foreground-100);
 }
 .primary.loading::after {
 	position: absolute;

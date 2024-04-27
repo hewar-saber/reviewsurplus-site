@@ -26,7 +26,7 @@ export default function NichePage({
             </section>
             <Calendar
                 fireNotification={fireNotification}
-                description='Fill out the form below to get started. Our team will get back'
+                description='Fill out the form to book a call with our team. We will disucss whether this software is a good fit for your business.'
             />
             {notificationContextHolder}
         </main>

@@ -1,10 +1,8 @@
-import { Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header/Header'
 import { Metadata } from 'next'
 import Script from 'next/script'
-
-const roboto = Roboto({ weight: '400', subsets: ['latin'] })
+import { GeistSans } from 'geist/font/sans'
 
 const title = 'Review Surplus'
 const description =
@@ -68,11 +66,6 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <head>
-                <link
-                    rel='stylesheet'
-                    href='https://use.typekit.net/ety1rve.css'
-                ></link>
-
                 {/* Favicon stuff */}
 
                 <link
@@ -136,7 +129,7 @@ export default function RootLayout({
                     />
                 )}
             </head>
-            <body className={roboto.className}>
+            <body className={GeistSans.className}>
                 <Header />
                 {children}
             </body>

@@ -34,10 +34,11 @@ html {
 	--form-element-radius: 12px;
 
 	--background-100: #fff;
-	--background-200: #f8fbff;
-	--background-300: #f5f9ff;
-	--background-400: #ccc;
-	--background-500: #bbb;
+	--background-200: #fafbff;
+	--background-300: #f7f9ff;
+	--background-400: #f5f7ff;
+	--background-500: #f2f4ff;
+	
 
 	--background-100-rgb: 255, 255, 255;
 
@@ -48,9 +49,11 @@ html {
 	--foreground-500: #808080;
 	--foreground-600: #909090;
 
-	--primary-100: red;
-	--primary-200: rgb(218, 0, 0);
+	--primary-100: #FFD900;
+	--primary-200: #ffde46;
 	--red: #e83e15;
+	--red-100: #FF0000;
+	--red-200: #e83e15;
 	--green: #084607;
 	--yellow: #f6cc0f;
 
@@ -94,9 +97,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "ivypresto-display", serif;
-	font-weight: 1000;
-	line-height: 95%;
+	font-weight: bolder;
+	line-height: 115%;
 }
 
 p,
