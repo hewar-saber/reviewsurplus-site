@@ -1,7 +1,4 @@
-'use client'
-import Calendar from '@/components/Calender/Calendar'
 import styles from './page.module.css'
-import { useNotification } from '@/hooks/notification/useNotification'
 import CTA from '@/components/CTA/CTA'
 import { Card, Cards } from '@/components/Card/Card'
 import Image from 'next/image'
@@ -10,12 +7,10 @@ import lessStressIcon from '@/public/icons/lessstress.svg'
 import appointmentIcon from '@/public/icons/appointment.svg'
 import timeIcon from '@/public/icons/Time.svg'
 import increaseIcon from '@/public/icons/increase.svg'
-// import brushIcon from '@/public/icons/brush.svg'
 import gearIcon from '@/public/icons/gear.svg'
 import starIcon from '@/public/icons/Star.svg'
 
 export default function Page() {
-    const { fireNotification, notificationContextHolder } = useNotification()
     return (
         <main className={styles.landing}>
             <section className={styles.hero}>
@@ -54,10 +49,6 @@ export default function Page() {
                         className={styles.heroImage}
                     />
                 </picture>
-                {/* <Calendar
-                    fireNotification={fireNotification}
-                    description='Fill out the form to book a call with our team. We will disucss whether this software is a good fit for your business.'
-                /> */}
             </section>
             <section className={styles.value}>
                 <h3>More Reviews, More Customers, Less Stress</h3>
@@ -304,7 +295,6 @@ export default function Page() {
                     </dd>
                 </dl>
             </section>
-            {notificationContextHolder}
         </main>
     )
 }
