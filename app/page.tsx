@@ -18,9 +18,9 @@ export default function Page() {
                     <div className={styles.text}>
                         <h1>Increase Revenue with More 5-Star Reviews</h1>
                         <p>
-                            Our software lets you easily collect more 5-star
-                            reviews and increase your revenue. Book a call to
-                            secure your 5-star reviews today.
+                            Get <b>50+ five-star reviews </b> in{' '}
+                            <i>under two weeks </i>
+                            using our software.
                         </p>
                         <CTA />
                     </div>

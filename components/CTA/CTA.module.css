@@ -29,7 +29,7 @@ a.secondary:focus {
 
 a.cta:hover,
 a.cta:focus {
-	background: var(--primary200);
+	background: var(--primary-200);
 }
 
 a.cta:focus,

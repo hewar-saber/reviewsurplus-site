@@ -38,6 +38,11 @@ html {
 	--background-300: #f7f9ff;
 	--background-400: #f5f7ff;
 	--background-500: #f2f4ff;
+	--background-600: #f0f2ff;
+	--background-700: #eef0ff;
+	--background-800: #ecedef;
+	--background-900: #eaecee;
+	--background-1000: #e8e9ee;
 	
 
 	--background-100-rgb: 255, 255, 255;
@@ -70,7 +75,7 @@ html {
 
 	--default-transition: 400ms ease;
 
-	--light-border: 0.5px solid var(--background-400);
+	--light-border: 0.5px solid var(--background-1000);
 	--light-border-on-primary: 0.5px solid var(--primary-200);
 	--rotate: rotate 1.5s linear infinite;
 	--rotate-2: rotate-2 1.5s linear infinite;
