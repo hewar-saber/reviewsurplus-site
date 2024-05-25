@@ -1,0 +1,9 @@
+.caseStudies {
+    display: flex;
+    flex-direction: column;
+    padding: var(--body-padding);
+    gap: var(--body-padding);
+    h1 {
+        font-size: var(--title-1);
+    }
+}

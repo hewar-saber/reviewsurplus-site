@@ -3,6 +3,7 @@ import Header from '@/components/Header/Header'
 import { Metadata } from 'next'
 import Script from 'next/script'
 import { GeistSans } from 'geist/font/sans'
+import Footer from '@/components/Footer/Footer'
 
 const title = 'Review Surplus'
 const description =
@@ -132,6 +133,7 @@ export default function RootLayout({
             <body className={GeistSans.className}>
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     )

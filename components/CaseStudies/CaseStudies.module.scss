@@ -1,0 +1,40 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap-3);
+    figure {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-2);
+
+        border: var(--light-border);
+        border-radius: var(--card-radius-2);
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+        }
+
+        figcaption {
+            display: inherit;
+            flex-direction: inherit;
+            gap: inherit;
+            padding: var(--card-padding);
+            justify-content: center;
+            align-items: center;
+            .title {
+                font-size: var(--paragraph-size-2);
+                text-align: center;
+
+                a {
+                    text-decoration: none;
+                    color: var(--a-color);
+                }
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}

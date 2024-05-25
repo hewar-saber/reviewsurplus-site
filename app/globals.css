@@ -32,17 +32,17 @@ html {
 	--line-height: 130%;
 
 	--form-element-radius: 12px;
-
-	--background-100: #fff;
-	--background-200: #fafbff;
-	--background-300: #f7f9ff;
-	--background-400: #f5f7ff;
-	--background-500: #f2f4ff;
-	--background-600: #f0f2ff;
-	--background-700: #eef0ff;
-	--background-800: #ecedef;
-	--background-900: #eaecee;
-	--background-1000: #e8e9ee;
+	--background-100: #fff;       /* #FFFFFF */
+	--background-200: #f9fbff;    /* A slightly bluish tint */
+	--background-300: #f3f7ff;    /* Increasing the blue presence */
+	--background-400: #edf3ff;    /* A softer light blue */
+	--background-500: #e7efff;    /* Gently moving towards CEE2FF */
+	--background-600: #e1ebff;    /* Closer hue to target color */
+	--background-700: #dbe7ff;    /* Almost there */
+	--background-800: #d5e3ff;    /* Just a touch away from CEE2FF */
+	--background-900: #cfdfff;    /* Very close to CEE2FF */
+	--background-1000: #cee2ff;   /* Target color CEE2FF */
+	
 	
 
 	--background-100-rgb: 255, 255, 255;
@@ -55,7 +55,12 @@ html {
 	--foreground-600: #909090;
 
 	--primary-100: #FFD900;
-	--primary-200: #ffde46;
+	--primary-200: #ff7300;
+	--primary-300: #ffa600;
+	--primary-400: #ffd900;
+	--primary-500: #f2ff00;
+	--primary-600: #ffea00;
+	--primary-700: #bfff00;
 	--red: #e83e15;
 	--red-100: #FF0000;
 	--red-200: #e83e15;
@@ -69,18 +74,18 @@ html {
 
 	--gradient-1: linear-gradient(
 		90deg,
-		var(--background-200) 0%,
-		rgba(var(--background-100-rgb), 0.5) 100%
+		var(--background-100) 0%,
+		var(--background-1000) 100%
 	);
-
 	--default-transition: 400ms ease;
 
-	--light-border: 0.5px solid var(--background-1000);
+	--light-border: 0.5px solid var(--foreground-600);
 	--light-border-on-primary: 0.5px solid var(--primary-200);
 	--rotate: rotate 1.5s linear infinite;
 	--rotate-2: rotate-2 1.5s linear infinite;
 	--card-padding: 20px;
 	--card-radius: 15px;
+	--card-radius-2: 30px;
 	--card-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 	--inline-button-width: 55px;

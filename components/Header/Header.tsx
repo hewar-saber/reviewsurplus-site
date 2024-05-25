@@ -1,9 +1,23 @@
-import styles from './Header.module.css'
+'use client'
+import styles from './Header.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import CTA from '../CTA/CTA'
+import CTA, { CaseStudyCTA } from '../CTA/CTA'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden'
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
+    }, [isMenuOpen])
+
     return (
         <header className={styles.header}>
             <Link href='/' aria-label='Navigate to Home Page'>
@@ -14,11 +28,38 @@ export default function Header() {
                     src={'/images/logo.svg'}
                 ></Image>
             </Link>
-            <CTA
-                style={{
-                    maxWidth: '150px'
-                }}
-            />
+            <div className={styles.links}>
+                <Link href='/web-design-and-seo' className={styles.link}>
+                    Web Design & SEO
+                </Link>
+                <Link href='/reputation-management' className={styles.link}>
+                    Reputation Management
+                </Link>
+                <CaseStudyCTA className={styles.secondaryCta} />
+                <CTA className={styles.cta} />
+                <button
+                    className={`${styles.menu} ${
+                        isMenuOpen ? styles.open : ''
+                    }`}
+                    aria-label='Open Menu'
+                    onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            {isMenuOpen && (
+                <div className={styles.menuContainer}>
+                    <Link href='/web-design-and-seo' className={styles.link}>
+                        Web Design & SEO
+                    </Link>
+                    <Link href='/reputation-management' className={styles.link}>
+                        Reputation Management
+                    </Link>
+                    <CaseStudyCTA className={styles.secondaryCta} />
+                    <CTA className={styles.cta} />
+                </div>
+            )}
         </header>
     )
 }

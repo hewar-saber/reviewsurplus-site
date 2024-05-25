@@ -22,6 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
+    "sass": "^1.77.2",
     "twilio": "^5.0.4",
     "validator": "^13.11.0"
   },

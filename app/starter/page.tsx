@@ -16,8 +16,7 @@ export default function Page() {
                         <li>No upfront or monthly fees; pay per new client.</li>
                         <li>Includes a lead-optimized website.</li>
                         <li>
-                            Gain 30+ five-star Google reviews. from your
-                            clients.
+                            Gain 30+ five-star Google reviews from your clients.
                         </li>
                     </ul>
                     <img
@@ -29,7 +28,7 @@ export default function Page() {
             </section>
             <Calendar
                 fireNotification={fireNotification}
-                description='Fill out the form to book a call with our team. We will disucss whether this software is a good fit for your business.'
+                description='Fill out the form to book a call with our team. We will disucss whether this plan is a good fit for your business.'
             />
             {notificationContextHolder}
         </main>
