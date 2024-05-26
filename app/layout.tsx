@@ -90,15 +90,11 @@ export default function RootLayout({
                 <link
                     rel='mask-icon'
                     href='/safari-pinned-tab.svg'
-                    color='#ff0000'
+                    color='#000000'
                 />
-                <meta
-                    name='apple-mobile-web-app-title'
-                    content='Review Surplus'
-                />
-                <meta name='application-name' content='Review Surplus' />
-                <meta name='msapplication-TileColor' content='#ff0000' />
+                <meta name='msapplication-TileColor' content='#000000' />
                 <meta name='theme-color' content='#ffffff' />
+
                 {process.env.NODE_ENV === 'production' && (
                     <Script
                         dangerouslySetInnerHTML={{

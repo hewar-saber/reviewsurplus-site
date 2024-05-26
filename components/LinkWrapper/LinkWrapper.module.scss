@@ -1,0 +1,11 @@
+.linkWrapper {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    a {
+        color: var(--a-color);
+        border-bottom: 1.2px solid currentColor;
+        text-decoration: none;
+    }
+}

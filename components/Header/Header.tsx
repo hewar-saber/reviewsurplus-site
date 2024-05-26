@@ -32,7 +32,10 @@ export default function Header() {
                 <Link href='/webdesign-and-seo' className={styles.link}>
                     Web Design & SEO
                 </Link>
-                <Link href='/reputation-management' className={styles.link}>
+                <Link
+                    href='/online-reputation-management'
+                    className={styles.link}
+                >
                     Reputation Management
                 </Link>
                 <CaseStudyCTA className={styles.secondaryCta} />
@@ -53,7 +56,10 @@ export default function Header() {
                     <Link href='/webdesign-and-seo' className={styles.link}>
                         Web Design & SEO
                     </Link>
-                    <Link href='/reputation-management' className={styles.link}>
+                    <Link
+                        href='/online-reputation-management'
+                        className={styles.link}
+                    >
                         Reputation Management
                     </Link>
                     <CaseStudyCTA className={styles.secondaryCta} />

@@ -1,0 +1,207 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--body-padding);
+    min-height: calc(100vh - 2 * var(--body-padding) - var(--header-height));
+}
+
+.hero .details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-4);
+}
+
+.hero .details .text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+}
+
+.hero .details .text h1 {
+    font-size: var(--title-1);
+    color: var(--foreground-100);
+}
+
+.hero .details .text p {
+    color: var(--foreground-300);
+}
+
+.hero .heroImage {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    -webkit-filter: var(--card-shadow);
+    filter: drop-shadow(var(--card-shadow));
+}
+
+.hero .calendar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+}
+
+.stakes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    h2 {
+        font-size: var(--title-3);
+        color: var(--foreground-100);
+    }
+    p,
+    b {
+        font-size: var(--paragraph-size-2);
+        color: var(--foreground-200);
+    }
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    width: calc(100% + 2 * var(--body-padding));
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
+    background: var(--gradient-1);
+
+    h3 {
+        font-size: var(--title-3);
+        color: var(--foreground-100);
+    }
+}
+
+.caseStudies {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    h4 {
+        font-size: var(--title-3);
+        color: var(--foreground-100);
+    }
+}
+
+.howWeDo,
+.ourPlan {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+}
+
+.howWeDo {
+    width: calc(100% + 2 * var(--body-padding));
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
+    background: var(--background-300);
+}
+
+.howWeDo .title,
+.ourPlan .title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+}
+
+.howWeDo h5,
+.ourPlan h4 {
+    font-size: var(--title-3);
+    color: var(--foreground-100);
+}
+
+.howWeDo p,
+.ourPlan p {
+    font-size: var(--paragraph-size-2);
+    color: var(--foreground-300);
+    max-width: var(--section-max-width);
+    /* background: red; */
+}
+
+.explanatory {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+}
+
+.explanatory h6 {
+    font-size: var(--title-3);
+    color: var(--foreground-100);
+}
+
+.explanatory .text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+}
+
+.explanatory .text p,
+.explanatory .text ol li {
+    font-size: var(--paragraph-size-1);
+    color: var(--foreground-300);
+}
+
+.explanatory .text ol {
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-1);
+}
+
+.line {
+    width: calc(100% + var(--body-padding) * 2);
+    margin: 0 calc(-1 * var(--body-padding));
+    border: 0;
+    border-top: var(--light-border);
+}
+
+.faq {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    align-items: center;
+}
+
+.faq h6 {
+    text-align: center;
+    font-size: var(--title-2);
+    color: var(--foreground-100);
+}
+
+.faq dl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-1);
+    font-size: var(--paragraph-size-1);
+    max-width: var(--section-max-width);
+}
+
+.faq dl dt {
+    font-weight: bolder;
+    text-align: center;
+    font-size: var(--paragraph-size-2);
+}
+
+.faq dl dd {
+    margin-bottom: var(--gap-2);
+    color: var(--foreground-300);
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .hero img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .hero .heroImage {
+        order: 1;
+    }
+
+    .hero .details {
+        order: 2;
+    }
+}

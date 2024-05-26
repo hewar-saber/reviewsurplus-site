@@ -12,6 +12,7 @@ import CaseStudies from '@/components/CaseStudies/CaseStudies'
 
 import calendarIcon from '@/public/icons/calendar.svg'
 import analyseIcon from '@/public/icons/analyse.svg'
+import LinkWrapper from '@/components/LinkWrapper/LinkWrapper'
 
 export default function WebDesignAndSeo() {
     return (
@@ -117,13 +118,15 @@ export default function WebDesignAndSeo() {
             <section className={styles.stakesTwo}>
                 <h6>Low Speed = Low Conversion Rate</h6>
                 <p>
-                    <a
-                        href='https://www.bidnamic.com/en-us/resources/how-website-speed-affects-your-conversion-rates'
-                        target='_blank'
-                        rel='noreferrer'
-                    >
-                        Studies suggest
-                    </a>{' '}
+                    <LinkWrapper>
+                        <a
+                            href='https://www.bidnamic.com/en-us/resources/how-website-speed-affects-your-conversion-rates'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            Studies suggest
+                        </a>
+                    </LinkWrapper>{' '}
                     that for every second the site{' '}
                     <Highlight>loads slower</Highlight>, the conversion rate{' '}
                     <Highlight>drops by 17%</Highlight>. How many customers have
@@ -131,13 +134,15 @@ export default function WebDesignAndSeo() {
                 </p>
                 <p>
                     Take a Pagespeed test at Google&apos;s{' '}
-                    <a
-                        href='https://pagespeed.web.dev/'
-                        target='_blank'
-                        rel='noreferrer'
-                    >
-                        PageSpeed Insights
-                    </a>{' '}
+                    <LinkWrapper>
+                        <a
+                            href='https://pagespeed.web.dev/'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            PageSpeed Insights
+                        </a>
+                    </LinkWrapper>{' '}
                     and find out for yourself.
                 </p>
 
@@ -149,25 +154,29 @@ export default function WebDesignAndSeo() {
                 <h6>We Make Fast-Loading Websites</h6>
                 <p>
                     We recently got a score of 93 for the pagespeed of
-                    <a
-                        href='https://fotballbilletter.no'
-                        target='_blank'
-                        rel='noreferrer nofollow'
-                    >
-                        {' '}
-                        Fotballbilletter.no
-                    </a>
+                    <LinkWrapper>
+                        <a
+                            href='https://fotballbilletter.no'
+                            target='_blank'
+                            rel='noreferrer nofollow'
+                        >
+                            {' '}
+                            Fotballbilletter.no
+                        </a>
+                    </LinkWrapper>
                 </p>
                 <p>
                     Don&apos;t take our word for it, test it at
-                    <a
-                        href='https://pagespeed.web.dev/'
-                        target='_blank'
-                        rel='noreferrer'
-                    >
-                        {' '}
-                        PageSpeed Insights
-                    </a>{' '}
+                    <LinkWrapper>
+                        <a
+                            href='https://pagespeed.web.dev/'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            {' '}
+                            PageSpeed Insights
+                        </a>
+                    </LinkWrapper>{' '}
                     and see for yourself.
                 </p>
                 <CTA />

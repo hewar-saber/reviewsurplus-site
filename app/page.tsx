@@ -94,7 +94,7 @@ export default function Page() {
                                 negative reviews.
                             </p>
                             <div className={styles.buttons}>
-                                <LearnMoreCTA href='/reputation-management' />
+                                <LearnMoreCTA href='/online-reputation-management' />
                                 <CTA />
                             </div>
                         </figcaption>
@@ -112,7 +112,6 @@ export default function Page() {
                         imgSrc={websiteIcon.src}
                         imgAlt='Website Icon'
                         imgWidth={40}
-                        imgHeight={40}
                         title='Website That Sells'
                         description='You will get a website that ranks on Google, and converts the traffic to paying clients'
                     />
@@ -121,7 +120,6 @@ export default function Page() {
                         imgSrc={starIcon.src}
                         imgAlt='Star Icon'
                         imgWidth={40}
-                        imgHeight={40}
                         title='More 5-star reviews'
                         description='You will get more 5-star reviews. As a result, clients trust you more, and you rank higher on Google.'
                     />
@@ -130,7 +128,6 @@ export default function Page() {
                         imgSrc={moneybagIcon.src}
                         imgAlt='Moneybag Icon'
                         imgWidth={40}
-                        imgHeight={40}
                         title='Increased Revenue'
                         description='You now have an increased revenue as a result of the higher ranking on Google and increased trust.'
                     />
@@ -150,7 +147,6 @@ export default function Page() {
                         imgSrc={calendarIcon.src}
                         imgAlt='Calendar Icon'
                         imgWidth={40}
-                        imgHeight={40}
                         title='Book a Call'
                         description='Choose a time slot that fits your schedule'
                     />
@@ -158,7 +154,6 @@ export default function Page() {
                         imgSrc={analyseIcon.src}
                         imgAlt='Analyse Icon'
                         imgWidth={40}
-                        imgHeight={40}
                         title='Analyse Your Situation'
                         description='We will analyse your situation and decide whether you need a new website, a redesign or more Google reviews.'
                     />
@@ -167,7 +162,6 @@ export default function Page() {
                         imgSrc={draftIcon.src}
                         imgAlt='Pen Icon'
                         imgWidth={40}
-                        imgHeight={40}
                         title='First Draft Within Days'
                         description='We will deliver the first draft of your website within days. For the software, we will set it up immediately.'
                     />
@@ -189,7 +183,7 @@ export default function Page() {
                         <p>Does your business need more reviews?</p>
 
                         <Buttons>
-                            <LearnMoreCTA href='/reputation-management' />
+                            <LearnMoreCTA href='/online-reputation-management' />
                             <CTA />
                         </Buttons>
                     </div>

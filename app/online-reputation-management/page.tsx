@@ -1,6 +1,5 @@
-import styles from './page.module.css'
+import styles from './page.module.scss'
 import CTA from '@/components/CTA/CTA'
-import { Card, Cards } from '@/components/Card/Card'
 import Image from 'next/image'
 
 import lessStressIcon from '@/public/icons/lessstress.svg'
@@ -9,16 +8,27 @@ import timeIcon from '@/public/icons/Time.svg'
 import increaseIcon from '@/public/icons/increase.svg'
 import gearIcon from '@/public/icons/gear.svg'
 import starIcon from '@/public/icons/Star.svg'
+import Main from '@/components/Main/Main'
+import Highlight from '@/components/Highlight/Highlight'
+import LinkWrapper from '@/components/LinkWrapper/LinkWrapper'
+import SmallCard, { Cards } from '@/components/SmallCard/SmallCard'
 
+import importIcon from '@/public/icons/import.svg'
+import emailIcon from '@/public/icons/email.svg'
+import analyseIcon from '@/public/icons/analyse.svg'
+import CaseStudies from '@/components/CaseStudies/CaseStudies'
 export default function Page() {
     return (
-        <main className={styles.landing}>
+        <Main>
             <section className={styles.hero}>
                 <section className={styles.details}>
                     <div className={styles.text}>
-                        <h1>Increase Revenue with More 5-Star Reviews</h1>
+                        <h1>
+                            <Highlight>Increase Revenue</Highlight> with More
+                            5-Star Reviews
+                        </h1>
                         <p>
-                            Get <b>50+ five-star reviews </b> in{' '}
+                            Get <Highlight>48+ five-star reviews </Highlight> in{' '}
                             <i>under two weeks </i>
                             using our software.
                         </p>
@@ -50,64 +60,24 @@ export default function Page() {
                     />
                 </picture>
             </section>
-            <section className={styles.value}>
-                <h3>More Reviews, More Customers, Less Stress</h3>
-                <div className={styles.cards}>
-                    <figure>
-                        <Image
-                            src={increaseIcon.src}
-                            alt='value'
-                            width={30}
-                            height={30}
-                        />
-                        <b>More Customers</b>
-                        <figcaption>
-                            You will get more 5-star reviews, resulting in
-                            better reputation, and increased revenue.
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <Image
-                            src={timeIcon.src}
-                            alt='value'
-                            width={30}
-                            height={30}
-                        />
-                        <b>Save Time</b>
-                        <figcaption>
-                            You will no longer need to ask customers for
-                            reviews. No more awkward conversations + save time!
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src={lessStressIcon.src}
-                            alt='value'
-                            height={30}
-                            style={{
-                                alignSelf: 'start'
-                            }}
-                        />
-                        <b>Less stress</b>
-                        <figcaption>
-                            You will no longer need to worry about your online
-                            reputation, we&apos;ve got you covered.
-                        </figcaption>
-                    </figure>
-                </div>
-                <CTA />
-            </section>
             <section className={styles.stakes}>
-                <h2>Lack of Reviews is Costing You New Customers</h2>
+                <h2>
+                    Lack of Reviews is <Highlight>Costing You</Highlight> New
+                    Customers
+                </h2>
                 <p>
-                    <a href='https://www.brightlocal.com/research/local-consumer-review-survey/'>
-                        76% of consumers&nbsp;
-                    </a>
+                    <Highlight>
+                        <LinkWrapper>
+                            <a href='https://www.brightlocal.com/research/local-consumer-review-survey/'>
+                                76% of consumers&nbsp;
+                            </a>
+                        </LinkWrapper>
+                    </Highlight>
                     read reviews before making a decision. How many people
-                    choose your competition because you <b>lack reviews?</b> The
-                    truth is, insufficient reviews are already{' '}
-                    <b>costing you</b> a great deal!
+                    choose your competition because you{' '}
+                    <Highlight>lack reviews?</Highlight> The truth is, lack of
+                    reviews is already <Highlight>costing you</Highlight> a
+                    great deal!
                 </p>
                 <b>We understand you.</b>
                 <p>
@@ -117,62 +87,64 @@ export default function Page() {
                 </p>
                 <CTA />
             </section>
+            <section className={styles.value}>
+                <h3>
+                    More Reviews,
+                    <Highlight> More Customers</Highlight>, Less Stress
+                </h3>
+                <Cards>
+                    <SmallCard
+                        imgSrc={increaseIcon.src}
+                        imgAlt='More Customers'
+                        title='More Customers'
+                        description='You will get more 5-star reviews, resulting in better reputation, and increased revenue.'
+                    />
 
+                    <SmallCard
+                        imgSrc={timeIcon.src}
+                        imgAlt='Save Time'
+                        title='Save Time'
+                        description='You will no longer need to ask customers for reviews. No more awkward conversations + save time!'
+                    />
+
+                    <SmallCard
+                        imgSrc={lessStressIcon.src}
+                        imgAlt='Less Stress'
+                        title='Less Stress'
+                        imgWidth={65}
+                        description='You will no longer need to worry about your online reputation, The negative reviews will be buried'
+                    />
+                </Cards>
+                <CTA />
+            </section>
+            <section className={styles.caseStudies}>
+                <h4>Case Studies</h4>
+                <CaseStudies />
+            </section>
             <section className={styles.ourPlan}>
                 <div className={styles.title}>
                     <h4>You Can Too Get More Reviews!</h4>
-                    <p>
-                        We will look at your unique situation, and discuss
-                        different strategies to incorporate the software into
-                        your workflow.
-                    </p>
-                    <p>
-                        Additionally, we will teach your staff how to use the
-                        software, to make everything effortless and smooth.
-                    </p>
                 </div>
                 <Cards>
-                    <Card>
-                        <Image
-                            src={appointmentIcon.src}
-                            alt='Researching Your Situation'
-                            width={30}
-                            height={30}
-                        />
-                        <b>Book a Call</b>
-                        <figcaption>
-                            We will discuss your unique challenges, and together
-                            decide whether this software is a good fit for your
-                            business.
-                        </figcaption>
-                    </Card>
-                    <Card>
-                        <Image
-                            src={gearIcon.src}
-                            alt='Set up'
-                            width={30}
-                            height={30}
-                        />
-                        <b>Set up</b>
-                        <figcaption>
-                            We will set up the software + upload your existing
-                            customer list, so you can get those 5-star review
-                            right away!
-                        </figcaption>
-                    </Card>
-                    <Card>
-                        <Image
-                            src={starIcon.src}
-                            alt='Success'
-                            width={30}
-                            height={30}
-                        />
-                        <b>Success</b>
-                        <figcaption>
-                            You now have more 5-star reviews, and as a result
-                            get more customers, and your revenue has increased.
-                        </figcaption>
-                    </Card>
+                    <SmallCard
+                        imgSrc={appointmentIcon.src}
+                        imgAlt='Researching Your Situation'
+                        title='Book a Call'
+                        description='Pick a time slot that fits your schedule.'
+                    />
+
+                    <SmallCard
+                        imgSrc={gearIcon.src}
+                        imgAlt='Set up'
+                        title='Set up'
+                        description='Upload your existing customer list, so you can get those 5-star review right away!'
+                    />
+                    <SmallCard
+                        imgSrc={starIcon.src}
+                        imgAlt='Success'
+                        title='Success'
+                        description='You now have more 5-star reviews, and as a result get more customers, and your revenue has increased.'
+                    />
                 </Cards>
                 <CTA />
             </section>
@@ -180,33 +152,31 @@ export default function Page() {
                 <div className={styles.title}>
                     <h5>How Does It Work?</h5>
                     <p>
-                        We have built the most comprehensive reputation
+                        We&apos;ve built the most comprehensive reputation
                         management software, and yet it&apos;s the easiest to
                         use!
                     </p>
                 </div>
                 <Cards>
-                    <Card>
-                        <b>Import Your Customer List</b>
-                        <figcaption>
-                            You can import your customer list, or add them
-                            manually.
-                        </figcaption>
-                    </Card>
-                    <Card>
-                        <b>Send Out Review Requests</b>
-                        <figcaption>
-                            You can mass-send email/sms to all customers or
-                            one-by-one.
-                        </figcaption>
-                    </Card>
-                    <Card>
-                        <b>Success</b>
-                        <figcaption>
-                            You now have more reviews, you can track the
-                            reviews, reply to them, etc...
-                        </figcaption>
-                    </Card>
+                    <SmallCard
+                        imgSrc={importIcon.src}
+                        imgAlt='Import Icon'
+                        title='Import Your Customer List'
+                        description='You can import your customer list, or add them manually.'
+                    />
+                    <SmallCard
+                        imgSrc={emailIcon.src}
+                        imgAlt='Send Out Review Requests'
+                        title='Send Out Review Requests'
+                        description='You can mass-send email/sms to all customers or one-by-one.'
+                    />
+
+                    <SmallCard
+                        imgSrc={analyseIcon.src}
+                        imgAlt='Track Reviews'
+                        title='Track Reviews'
+                        description='You can track all reviews, and reply to them, while adding new clients.'
+                    />
                 </Cards>
                 <CTA />
             </section>
@@ -295,6 +265,6 @@ export default function Page() {
                     </dd>
                 </dl>
             </section>
-        </main>
+        </Main>
     )
 }
