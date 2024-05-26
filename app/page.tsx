@@ -3,34 +3,41 @@ import styles from './page.module.scss'
 import websiteIcon from '@/public/icons/website.svg'
 import starIcon from '@/public/icons/Star.svg'
 import moneybagIcon from '@/public/icons/moneybag.svg'
-import { WithArrow } from '@/components/Buttons/Buttons'
 import calendarIcon from '@/public/icons/calendar.svg'
 import analyseIcon from '@/public/icons/analyse.svg'
+import draftIcon from '@/public/icons/draft.svg'
 import Buttons from '@/components/Buttons/Buttons'
 import Image from 'next/image'
 import CaseStudies from '@/components/CaseStudies/CaseStudies'
+import Main from '@/components/Main/Main'
+import Highlight from '@/components/Highlight/Highlight'
+import FullLine from '@/components/FullLine/FullLine'
+import SmallCard from '@/components/SmallCard/SmallCard'
+import { Cards } from '@/components/SmallCard/SmallCard'
 
 export default function Page() {
     return (
-        <main className={styles.home}>
+        <Main>
             <section className={styles.hero}>
                 <h1>
-                    <span>Increase Revenue</span> with Sales Optimized Websites
-                    & More 5-Star Reviews
+                    <Highlight>Increase Revenue</Highlight> with Sales Optimized
+                    Websites & More 5-Star Reviews
                 </h1>
                 <p>
-                    We will get you a <span>sales & SEO optimized website</span>{' '}
-                    and <span>50+ five-star reviews</span> in under 10 days
+                    We will get you a{' '}
+                    <Highlight>sales & SEO optimized website</Highlight> and{' '}
+                    <Highlight>50+ five-star reviews</Highlight> in under 10
+                    days
                 </p>
                 <div className={styles.buttons}>
                     <CaseStudyCTA />
                     <CTA />
                 </div>
             </section>
-            <hr className={styles.fullLine} />
+            <FullLine />
 
             <section className={styles.stakes}>
-                <h2>Insufficient Marketing is Like a Hole in Your Pocket</h2>
+                <h2>Inefficient Marketing is Like a Hole in Your Pocket</h2>
                 <div className={styles.cards}>
                     <figure className={styles.valueCard}>
                         <img
@@ -96,59 +103,38 @@ export default function Page() {
             </section>
             <section className={styles.valueProposition}>
                 <h3>
-                    A Website That <span>Sells</span> & More{' '}
-                    <span>5-Star Reviews</span>
+                    A Website That <Highlight>Sells</Highlight> & More{' '}
+                    <Highlight>5-Star Reviews</Highlight>
                 </h3>
 
-                <div className={styles.cards}>
-                    <figure>
-                        <img
-                            src={websiteIcon.src}
-                            alt='Website Icon'
-                            width={40}
-                            height={40}
-                        />
-                        <figcaption>
-                            <b className={styles.title}>Website That Sells</b>
-                            <p>
-                                You will get a website that ranks on Google, and
-                                converts the traffic to paying clients
-                            </p>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img
-                            src={starIcon.src}
-                            alt='Star icon'
-                            width={40}
-                            height={40}
-                        />
-                        <figcaption>
-                            <b className={styles.title}>More 5-star reviews</b>
-                            <p>
-                                You will get more 5-star reviews. As a result,
-                                clients trust you more, and you rank higher on
-                                Google.
-                            </p>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img
-                            src={moneybagIcon.src}
-                            alt='Moneybag icon'
-                            width={40}
-                            height={40}
-                        />
-                        <figcaption>
-                            <b className={styles.title}>Increased Revenue</b>
-                            <p>
-                                You now have an increased revenue as a result of
-                                the higher ranking on Google and increased
-                                trust.
-                            </p>
-                        </figcaption>
-                    </figure>
-                </div>
+                <Cards>
+                    <SmallCard
+                        imgSrc={websiteIcon.src}
+                        imgAlt='Website Icon'
+                        imgWidth={40}
+                        imgHeight={40}
+                        title='Website That Sells'
+                        description='You will get a website that ranks on Google, and converts the traffic to paying clients'
+                    />
+
+                    <SmallCard
+                        imgSrc={starIcon.src}
+                        imgAlt='Star Icon'
+                        imgWidth={40}
+                        imgHeight={40}
+                        title='More 5-star reviews'
+                        description='You will get more 5-star reviews. As a result, clients trust you more, and you rank higher on Google.'
+                    />
+
+                    <SmallCard
+                        imgSrc={moneybagIcon.src}
+                        imgAlt='Moneybag Icon'
+                        imgWidth={40}
+                        imgHeight={40}
+                        title='Increased Revenue'
+                        description='You now have an increased revenue as a result of the higher ranking on Google and increased trust.'
+                    />
+                </Cards>
                 <CTA />
             </section>
 
@@ -159,53 +145,33 @@ export default function Page() {
 
             <section className={styles.process}>
                 <h5>Increase Revenue Simply</h5>
-                <div className={styles.cards}>
-                    <figure>
-                        <img
-                            src={calendarIcon.src}
-                            alt='Calendar icon'
-                            width={40}
-                            height={40}
-                        />
-                        <figcaption>
-                            <b>Book a Call</b>
-                            <p>Choose a time slot that fits your schedule</p>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img
-                            src={analyseIcon.src}
-                            alt='Analyse icon'
-                            width={40}
-                            height={40}
-                        />
-                        <figcaption>
-                            <b>Analyse Your Situation</b>
-                            <p>
-                                We will analyse your situation and decide
-                                whether you need a new website, a redesign or
-                                more Google reviews.
-                            </p>
-                        </figcaption>
-                    </figure>
+                <Cards>
+                    <SmallCard
+                        imgSrc={calendarIcon.src}
+                        imgAlt='Calendar Icon'
+                        imgWidth={40}
+                        imgHeight={40}
+                        title='Book a Call'
+                        description='Choose a time slot that fits your schedule'
+                    />
+                    <SmallCard
+                        imgSrc={analyseIcon.src}
+                        imgAlt='Analyse Icon'
+                        imgWidth={40}
+                        imgHeight={40}
+                        title='Analyse Your Situation'
+                        description='We will analyse your situation and decide whether you need a new website, a redesign or more Google reviews.'
+                    />
 
-                    <figure>
-                        <img
-                            src={moneybagIcon.src}
-                            alt='Moneybag icon'
-                            width={40}
-                            height={40}
-                        />
-                        <figcaption>
-                            <b>Increased Revenue</b>
-                            <p>
-                                You now have an increased revenue as a result of
-                                the higher ranking on Google and increased
-                                trust.
-                            </p>
-                        </figcaption>
-                    </figure>
-                </div>
+                    <SmallCard
+                        imgSrc={draftIcon.src}
+                        imgAlt='Pen Icon'
+                        imgWidth={40}
+                        imgHeight={40}
+                        title='First Draft Within Days'
+                        description='We will deliver the first draft of your website within days. For the software, we will set it up immediately.'
+                    />
+                </Cards>
                 <CTA />
             </section>
 
@@ -241,6 +207,6 @@ export default function Page() {
                     />
                 </div>
             </section>
-        </main>
+        </Main>
     )
 }

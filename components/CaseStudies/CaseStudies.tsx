@@ -68,7 +68,7 @@ export default function CaseStudies() {
                         known that this is football ticket service.
                     </p>
                     <WithArrow
-                        href='/case-studies/fotballbilletter-webdesign'
+                        href='/case-studies/fotballbilletter-visual-identity'
                         type='secondary'
                     >
                         Read Case Study

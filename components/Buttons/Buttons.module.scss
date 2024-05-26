@@ -1,36 +1,37 @@
 .button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: var(--gap-1);
-	padding: 10px;
-	width: max-content;
-	border-radius: var(--card-radius);
-	border: none;
-	background: none;
-	cursor: pointer;
-	transition: var(--default-transition);
-	font-weight: bolder;
-	text-decoration: none;
-	&.primary {
-		background: var(--primary-100);
-		border: var(--light-border);
-		border-color: var(--primary-100);
-	}
-	
-	&.secondary {
-		border: var(--light-border);
-	}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-1);
+    padding: var(--button-padding);
+    width: max-content;
+    border-radius: var(--card-radius);
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: var(--default-transition);
+    font-weight: bolder;
+    text-decoration: none;
+    &.primary {
+        background: var(--primary-100);
+        border: var(--light-border);
+        border-color: var(--primary-100);
+    }
 
-	&:hover {
-		background: var(--primary-200);
-	}
+    &.secondary {
+        border: var(--light-border);
+    }
+
+    &:hover {
+        background: var(--primary-200);
+    }
 }
 
-
 .buttons {
-	display: flex;
-	gap: var(--gap-2);
+    display: flex;
+    gap: var(--gap-2);
+    justify-content: center;
+    align-items: center;
 
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }

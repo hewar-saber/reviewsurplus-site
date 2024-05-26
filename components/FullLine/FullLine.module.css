@@ -1,0 +1,6 @@
+.fullLine {
+    width: calc(100% + 2 * var(--body-padding));
+    margin: 0 calc(-1 * var(--body-padding));
+    border: none;
+    border-top: var(--light-border);
+}

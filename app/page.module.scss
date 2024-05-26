@@ -1,215 +1,137 @@
-.home {
-    padding: var(--body-padding);
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-3);
+
+    h1 {
+        font-size: var(--title-1);
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        gap: var(--gap-2);
+        flex-wrap: wrap;
+    }
+}
+.stakes {
     display: flex;
     flex-direction: column;
-    gap: var(--body-padding);
-    .hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: var(--gap-3);
-        height: calc(100vh - 2 * var(--body-padding));
+    gap: var(--gap-3);
 
-        h1 {
-            font-size: var(--title-1);
-            text-align: center;
-            span {
-                font-size: var(--title-1);
-                color: var(--primary-200);
-                font-weight: bolder;
-            }
-        }
-        p {
-            text-align: center;
-            span {
-                color: var(--primary-200);
-                font-weight: bolder;
-            }
-        }
-
-        .buttons {
-            display: flex;
-            gap: var(--gap-2);
-            flex-wrap: wrap;
-        }
+    h2 {
+        font-size: var(--title-3);
     }
 
-    .fullLine {
-        width: calc(100% + 2 * var(--body-padding));
-        margin: 0 calc(-1 * var(--body-padding));
-        border: none;
-        border-top: var(--light-border);
-    }
-
-    .stakes {
-        display: flex;
-        flex-direction: column;
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: var(--gap-3);
 
-        h2 {
-            font-size: var(--title-3);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--gap-3);
-
-            .valueCard {
-                display: flex;
-                flex-direction: column;
-                gap: var(--gap-2);
-
-                figcaption {
-                    display: inherit;
-                    flex-direction: inherit;
-                    gap: inherit;
-                    .title {
-                        font-size: var(--paragraph-size-2);
-                    }
-                    .buttons {
-                        display: flex;
-                        gap: var(--gap-2);
-                        flex-wrap: wrap;
-                    }
-                }
-            }
-        }
-    }
-
-    .valueProposition {
-        width: calc(100% + 2 * var(--body-padding));
-        margin: 0 calc(-1 * var(--body-padding));
-        padding: var(--body-padding);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        gap: var(--gap-3);
-        background: var(--gradient-1);
-
-        h3 {
-            font-size: var(--title-3);
-            text-align: center;
-            span {
-                color: var(--primary-200);
-                font-weight: bolder;
-                font-size: var(--title-3);
-            }
-        }
-
-        .cards {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--gap-3);
-            .valueCard {
-                display: flex;
-                flex-direction: column;
-                gap: var(--gap-2);
-
-                figcaption {
-                    display: inherit;
-                    flex-direction: inherit;
-                    gap: inherit;
-                    .title {
-                        font-size: var(--paragraph-size-2);
-                    }
-                }
-            }
-        }
-    }
-
-    .caseStudies {
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap-3);
-
-        h4 {
-            font-size: var(--title-3);
-        }
-    }
-
-    .process {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--gap-3);
-        width: calc(100% + 2 * var(--body-padding));
-        margin: 0 calc(-1 * var(--body-padding));
-        padding: var(--body-padding);
-        background: var(--gradient-1);
-
-        h5 {
-            font-size: var(--title-3);
-            text-align: center;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--gap-3);
-            width: 100%;
-            figure {
-                display: flex;
-                flex-direction: column;
-                gap: var(--gap-2);
-
-                figcaption {
-                    display: inherit;
-                    flex-direction: inherit;
-                    gap: inherit;
-                    .title {
-                        font-size: var(--paragraph-size-2);
-
-                        a {
-                            text-decoration: none;
-                            color: var(--a-color);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .reviewSurplus {
-        display: flex;
-        gap: var(--gap-3);
-        align-items: center;
-        .column {
-            width: 50%;
+        .valueCard {
             display: flex;
             flex-direction: column;
-            gap: var(--gap-3);
-            position: relative;
-            align-items: center;
-            justify-content: center;
+            gap: var(--gap-2);
 
-            .card {
-                display: flex;
-                flex-direction: column;
-                gap: var(--gap-2);
-            }
-
-            h6 {
-                font-size: var(--title-3);
-            }
-            img {
-                object-fit: contain;
-                max-width: 100%;
+            figcaption {
+                display: inherit;
+                flex-direction: inherit;
+                gap: inherit;
+                .title {
+                    font-size: var(--paragraph-size-2);
+                }
+                .buttons {
+                    display: flex;
+                    gap: var(--gap-2);
+                    flex-wrap: wrap;
+                }
             }
         }
     }
 }
 
+.valueProposition {
+    width: calc(100% + 2 * var(--body-padding));
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: var(--gap-3);
+    background: var(--gradient-1);
+
+    h3 {
+        font-size: var(--title-3);
+        text-align: center;
+    }
+}
+
+.caseStudies {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+
+    h4 {
+        font-size: var(--title-3);
+    }
+}
+
+.process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-3);
+    width: calc(100% + 2 * var(--body-padding));
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
+    background: var(--gradient-1);
+
+    h5 {
+        font-size: var(--title-3);
+        text-align: center;
+    }
+}
+
+.reviewSurplus {
+    display: flex;
+    gap: var(--gap-3);
+    align-items: center;
+    .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-3);
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-2);
+        }
+
+        h6 {
+            font-size: var(--title-3);
+        }
+        img {
+            object-fit: contain;
+            max-width: 100%;
+        }
+    }
+}
+
 @media (max-width: 900px) {
-    .home {
-        .reviewSurplus {
-            flex-direction: column-reverse;
-            .column {
-                width: 100%;
-            }
+    .reviewSurplus {
+        flex-direction: column-reverse;
+        .column {
+            width: 100%;
         }
     }
 }

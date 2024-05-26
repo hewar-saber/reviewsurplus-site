@@ -2,7 +2,7 @@
     "files.exclude": {
         "**/node_modules": true,
         "**/.vscode": true,
-        "**/.next": true
+        // "**/.next": true
     },
     "editor.formatOnSave": true
 }

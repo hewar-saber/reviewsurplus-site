@@ -29,7 +29,7 @@ export default function Header() {
                 ></Image>
             </Link>
             <div className={styles.links}>
-                <Link href='/web-design-and-seo' className={styles.link}>
+                <Link href='/webdesign-and-seo' className={styles.link}>
                     Web Design & SEO
                 </Link>
                 <Link href='/reputation-management' className={styles.link}>
@@ -50,7 +50,7 @@ export default function Header() {
             </div>
             {isMenuOpen && (
                 <div className={styles.menuContainer}>
-                    <Link href='/web-design-and-seo' className={styles.link}>
+                    <Link href='/webdesign-and-seo' className={styles.link}>
                         Web Design & SEO
                     </Link>
                     <Link href='/reputation-management' className={styles.link}>

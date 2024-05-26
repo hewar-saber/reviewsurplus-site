@@ -1,0 +1,25 @@
+.smallCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+
+    figcaption {
+        display: inherit;
+        flex-direction: inherit;
+        gap: inherit;
+        .title {
+            font-size: var(--paragraph-size-2);
+
+            a {
+                text-decoration: none;
+                color: var(--a-color);
+            }
+        }
+    }
+}
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap-3);
+}

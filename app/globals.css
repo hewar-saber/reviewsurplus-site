@@ -12,8 +12,7 @@ html {
 :root {
 	--title-font-family: "ivypresto-display", serif;
 	--title-line-height: 116.3%;
-	/*Sizes*/
-	--body-padding: 50px;
+	--body-padding: clamp(25px, 10vw, 100px);
 	--padding: var(--gap-2) var(--body-padding);
 	--header-height: 80px;
 	--gap-1: 10px;
@@ -91,6 +90,8 @@ html {
 	--inline-button-width: 55px;
 
 	--shake-animation: shake 3s ease-in-out infinite;
+
+	--button-padding: 12px;
 }
 
 body {
@@ -136,7 +137,7 @@ p, button, a, span, div, b, i{
 
 @media (max-width: 600px) {
 	:root {
-		--body-padding: 25px;
+		/* --body-padding: 25px; */
 		--header-height: 70px;
 	}
 }
