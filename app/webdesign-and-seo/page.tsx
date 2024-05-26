@@ -6,7 +6,7 @@ import CTA, { CaseStudyCTA } from '@/components/CTA/CTA'
 import FullLine from '@/components/FullLine/FullLine'
 import SmallCard, { Cards } from '@/components/SmallCard/SmallCard'
 import rankIcon from '@/public/icons/rank.svg'
-import flashIcon from '@/public/icons/flash.svg'
+import flashIcon from '@/public/icons/Flash.svg'
 import moneyBagIcon from '@/public/icons/moneybag.svg'
 import CaseStudies from '@/components/CaseStudies/CaseStudies'
 
