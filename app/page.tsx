@@ -182,7 +182,11 @@ export default function Page() {
                         </p>
                         <p>Does your business need more reviews?</p>
 
-                        <Buttons>
+                        <Buttons
+                            style={{
+                                justifyContent: 'start'
+                            }}
+                        >
                             <LearnMoreCTA href='/online-reputation-management' />
                             <CTA />
                         </Buttons>

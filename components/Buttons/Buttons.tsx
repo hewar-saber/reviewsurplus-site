@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import styles from './Buttons.module.scss'
 import arrowIcon from '@/public/icons/arrow-thick.svg'
 
@@ -21,6 +22,16 @@ export function WithArrow({
     )
 }
 
-export default function Buttons({ children }: { children: React.ReactNode }) {
-    return <div className={styles.buttons}>{children}</div>
+export default function Buttons({
+    style = {},
+    children
+}: {
+    style?: CSSProperties
+    children: React.ReactNode
+}) {
+    return (
+        <div className={styles.buttons} style={style}>
+            {children}
+        </div>
+    )
 }
