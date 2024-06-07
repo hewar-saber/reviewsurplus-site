@@ -8,6 +8,43 @@ export default function CaseStudies() {
         <div className={styles.cards}>
             <figure>
                 <Image
+                    src='/images/aic-website.webp'
+                    alt='Web design & SEO for AIC Roofing'
+                    width={800}
+                    height={500}
+                    layout='responsive'
+                    sizes='(max-width: 900px) 100vw, 50vw'
+                    loading='lazy'
+                />
+                <figcaption>
+                    <b className={styles.title}>
+                        Web design and SEO for{' '}
+                        <LinkWrapper>
+                            <a
+                                href='https://afritechcons.com'
+                                target='_blank'
+                                rel='noreferrer nofollow
+				'
+                            >
+                                AIC Roofing
+                            </a>
+                        </LinkWrapper>
+                    </b>
+                    <p>
+                        We built a fast & beautiful website for AIC Roofing to
+                        help them get more roofing leads.
+                    </p>
+                    <WithArrow
+                        href='https://afritechcons.com/'
+                        type='secondary'
+                        newTab
+                    >
+                        Visit Website
+                    </WithArrow>
+                </figcaption>
+            </figure>
+            <figure>
+                <Image
                     src='/images/Fotballbilletter-website.webp'
                     alt='Web design & SEO for Fotballbilletter.no'
                     width={800}
@@ -36,10 +73,11 @@ export default function CaseStudies() {
                         save time with the CMS features
                     </p>
                     <WithArrow
-                        href='/case-studies/fotballbilletter-webdesign'
+                        href='https://fotballbilletter.no/'
                         type='secondary'
+                        newTab
                     >
-                        Read Case Study
+                        Visit Website
                     </WithArrow>
                 </figcaption>
             </figure>

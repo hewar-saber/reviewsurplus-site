@@ -80,8 +80,8 @@ export default function WebDesignAndSeo() {
                         imgSrc={moneyBagIcon.src}
                         imgWidth={30}
                         imgAlt='Money Bag Icon'
-                        title='Increased Revenue'
-                        description='You now have an increased revenue as a result of the higher ranking on Google and higher conversion rate.'
+                        title='Increased Conversion'
+                        description='You get a website that converts more of the traffic into paying customers, resulting in increased revenue.'
                     />
                 </Cards>
                 <CTA />

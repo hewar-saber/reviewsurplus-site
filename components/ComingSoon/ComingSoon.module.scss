@@ -6,6 +6,9 @@
     gap: var(--group-medium);
     padding: 0 var(--body-padding);
     height: calc(100vh - var(--header-height));
+    h1 {
+        text-align: center;
+    }
     p {
         text-align: center;
     }

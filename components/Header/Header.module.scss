@@ -10,10 +10,12 @@
     backdrop-filter: blur(10px);
     height: var(--header-height);
     padding: 0 var(--body-padding);
+    flex-wrap: wrap;
     .links {
         display: flex;
         align-items: center;
         gap: var(--group-small);
+        margin-left: auto;
 
         .link {
             color: var(--foreground-400);

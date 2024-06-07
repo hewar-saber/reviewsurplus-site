@@ -14,10 +14,6 @@
     text-decoration: none;
     font-weight: 600;
 
-    &.fullHeight {
-        height: 100%;
-    }
-
     &.primary {
         background: var(--primary-100);
         border: var(--light-border);
@@ -54,4 +50,10 @@
     align-items: center;
 
     flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+    .button {
+        width: 100%;
+    }
 }
