@@ -17,9 +17,10 @@ import importIcon from '@/public/icons/import.svg'
 import emailIcon from '@/public/icons/email.svg'
 import analyseIcon from '@/public/icons/analyse.svg'
 import CaseStudies from '@/components/CaseStudies/CaseStudies'
+import FullLine from '@/components/FullLine/FullLine'
 export default function Page() {
     return (
-        <Main>
+        <Main noPaddingTop>
             <section className={styles.hero}>
                 <section className={styles.details}>
                     <div className={styles.text}>
@@ -95,6 +96,7 @@ export default function Page() {
                 <Cards>
                     <SmallCard
                         imgSrc={increaseIcon.src}
+                        imgWidth={30}
                         imgAlt='More Customers'
                         title='More Customers'
                         description='You will get more 5-star reviews, resulting in better reputation, and increased revenue.'
@@ -103,6 +105,7 @@ export default function Page() {
                     <SmallCard
                         imgSrc={timeIcon.src}
                         imgAlt='Save Time'
+                        imgWidth={30}
                         title='Save Time'
                         description='You will no longer need to ask customers for reviews. No more awkward conversations + save time!'
                     />
@@ -111,7 +114,7 @@ export default function Page() {
                         imgSrc={lessStressIcon.src}
                         imgAlt='Less Stress'
                         title='Less Stress'
-                        imgWidth={65}
+                        imgWidth={50}
                         description='You will no longer need to worry about your online reputation, The negative reviews will be buried'
                     />
                 </Cards>
@@ -128,6 +131,7 @@ export default function Page() {
                 <Cards>
                     <SmallCard
                         imgSrc={appointmentIcon.src}
+                        imgWidth={30}
                         imgAlt='Researching Your Situation'
                         title='Book a Call'
                         description='Pick a time slot that fits your schedule.'
@@ -135,12 +139,14 @@ export default function Page() {
 
                     <SmallCard
                         imgSrc={gearIcon.src}
+                        imgWidth={30}
                         imgAlt='Set up'
                         title='Set up'
                         description='Upload your existing customer list, so you can get those 5-star review right away!'
                     />
                     <SmallCard
                         imgSrc={starIcon.src}
+                        imgWidth={30}
                         imgAlt='Success'
                         title='Success'
                         description='You now have more 5-star reviews, and as a result get more customers, and your revenue has increased.'
@@ -160,12 +166,14 @@ export default function Page() {
                 <Cards>
                     <SmallCard
                         imgSrc={importIcon.src}
+                        imgWidth={30}
                         imgAlt='Import Icon'
                         title='Import Your Customer List'
                         description='You can import your customer list, or add them manually.'
                     />
                     <SmallCard
                         imgSrc={emailIcon.src}
+                        imgWidth={30}
                         imgAlt='Send Out Review Requests'
                         title='Send Out Review Requests'
                         description='You can mass-send email/sms to all customers or one-by-one.'
@@ -173,6 +181,7 @@ export default function Page() {
 
                     <SmallCard
                         imgSrc={analyseIcon.src}
+                        imgWidth={30}
                         imgAlt='Track Reviews'
                         title='Track Reviews'
                         description='You can track all reviews, and reply to them, while adding new clients.'
@@ -233,31 +242,39 @@ export default function Page() {
 
                 <CTA />
             </section>
-            <hr className={styles.line} />
+            <FullLine />
             <section className={styles.faq}>
                 <h6>Frequently Asked Questions (FAQ)</h6>
                 <dl>
-                    <dt>What are online reputation management software?</dt>
+                    <dt>
+                        <b>What are online reputation management software?</b>
+                    </dt>
                     <dd>
                         Reputation management software helps business owners
                         manage their online reputation while collecting 5-star
                         reviews. Our software helps business owners increase
                         their reviews quickly and effortlessly.
                     </dd>
-                    <dt>How long does reputation management take?</dt>
+                    <dt>
+                        <b>How long does reputation management take?</b>
+                    </dt>
                     <dd>
                         With our reputation management software, you can expect
                         to see results immediately. You can even upload your
                         customer list to get a head start!
                     </dd>
-                    <dt>How do I get more reviews for my business?</dt>
+                    <dt>
+                        <b>How do I get more reviews for my business?</b>
+                    </dt>
                     <dd>
                         You can get more reviews for your practice by asking
                         your customers for reviews. Review Surplus helps you
                         simplify this approach while collecting only 5-star
                         reviews.
                     </dd>
-                    <dt>How does reputation management work?</dt>
+                    <dt>
+                        <b>How does reputation management work?</b>
+                    </dt>
                     <dd>
                         Review Surplus helps you send out SMS and email to your
                         customers. This process is super easy and requires

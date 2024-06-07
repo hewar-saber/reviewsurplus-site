@@ -1,14 +1,14 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--gap-3);
+    gap: var(--group-big);
     figure {
         display: flex;
         flex-direction: column;
-        gap: var(--gap-2);
+        gap: var(--group-small);
 
         border: var(--light-border);
-        border-radius: var(--card-radius-2);
+        border-radius: var(--card-big-radius);
         overflow: hidden;
 
         img {
@@ -19,15 +19,14 @@
             display: inherit;
             flex-direction: inherit;
             gap: inherit;
-            padding: var(--card-padding);
+            padding: var(--card-big-padding);
             justify-content: center;
             align-items: center;
             .title {
-                font-size: var(--paragraph-size-2);
+                font-size: var(--body-size-2);
                 text-align: center;
 
                 a {
-                    text-decoration: none;
                     color: var(--a-color);
                 }
             }

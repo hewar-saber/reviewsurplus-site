@@ -2,5 +2,9 @@
     padding: var(--body-padding);
     display: flex;
     flex-direction: column;
-    gap: var(--body-padding);
+    gap: var(--row-spacing);
+
+    &.noPaddingTop {
+        padding-top: 0;
+    }
 }

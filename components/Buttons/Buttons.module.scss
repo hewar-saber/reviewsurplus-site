@@ -2,16 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--gap-1);
-    padding: var(--button-padding);
+    gap: var(--group-small);
+    padding: var(--form-element-padding);
+    border-radius: var(--form-element-radius);
     width: max-content;
-    border-radius: var(--card-radius);
     border: none;
     background: none;
     cursor: pointer;
     transition: var(--default-transition);
     font-weight: bolder;
     text-decoration: none;
+    font-weight: 600;
     &.primary {
         background: var(--primary-100);
         border: var(--light-border);
@@ -22,14 +23,28 @@
         border: var(--light-border);
     }
 
-    &:hover {
-        background: var(--primary-200);
+    &.secondary {
+        &:focus {
+            border-color: var(--outline-color);
+            outline: var(--outline);
+            box-shadow: var(--button-shadow);
+            background: var(--background-100);
+            scale: var(--scale);
+        }
+
+        &:hover {
+            background: var(--foreground-300);
+            color: var(--background-100);
+            img {
+                filter: invert(100%);
+            }
+        }
     }
 }
 
 .buttons {
     display: flex;
-    gap: var(--gap-2);
+    gap: var(--group-small);
     justify-content: center;
     align-items: center;
 

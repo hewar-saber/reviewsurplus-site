@@ -3,52 +3,40 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: var(--gap-3);
+    gap: var(--group-big);
+    background: var(--gradient-radial);
+
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
 
     h1 {
-        font-size: var(--title-1);
         text-align: center;
     }
     p {
         text-align: center;
     }
-
-    .buttons {
-        display: flex;
-        gap: var(--gap-2);
-        flex-wrap: wrap;
-    }
 }
 .stakes {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
-
-    h2 {
-        font-size: var(--title-3);
-    }
+    gap: var(--group-big);
 
     .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: var(--gap-3);
+        gap: var(--group-medium);
 
         .valueCard {
             display: flex;
             flex-direction: column;
-            gap: var(--gap-2);
+            gap: var(--group-medium);
 
             figcaption {
                 display: inherit;
                 flex-direction: inherit;
                 gap: inherit;
                 .title {
-                    font-size: var(--paragraph-size-2);
-                }
-                .buttons {
-                    display: flex;
-                    gap: var(--gap-2);
-                    flex-wrap: wrap;
+                    font-size: var(--body-size-2);
                 }
             }
         }
@@ -63,8 +51,8 @@
     flex-direction: column;
     align-items: center;
 
-    gap: var(--gap-3);
-    background: var(--gradient-1);
+    gap: var(--group-big);
+    background: var(--gradient);
 
     h3 {
         font-size: var(--title-3);
@@ -75,7 +63,7 @@
 .caseStudies {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
+    gap: var(--group-big);
 
     h4 {
         font-size: var(--title-3);
@@ -86,27 +74,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-3);
+    gap: var(--group-big);
     width: calc(100% + 2 * var(--body-padding));
     margin: 0 calc(-1 * var(--body-padding));
     padding: var(--body-padding);
-    background: var(--gradient-1);
+    background: var(--gradient);
 
     h5 {
-        font-size: var(--title-3);
         text-align: center;
     }
 }
 
 .reviewSurplus {
     display: flex;
-    gap: var(--gap-3);
+    gap: var(--group-big);
     align-items: center;
     .column {
         width: 50%;
         display: flex;
         flex-direction: column;
-        gap: var(--gap-3);
+        gap: var(--group-big);
         position: relative;
         align-items: center;
         justify-content: center;
@@ -114,11 +101,7 @@
         .card {
             display: flex;
             flex-direction: column;
-            gap: var(--gap-2);
-        }
-
-        h6 {
-            font-size: var(--title-3);
+            gap: var(--group-medium);
         }
         img {
             object-fit: contain;

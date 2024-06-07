@@ -1,5 +1,5 @@
 .highlight {
-	color: var(--primary-200);
-	font-weight: bolder;
-	font-size: inherit;
+    color: var(--primary-100);
+    font-weight: bold;
+    font-size: inherit;
 }

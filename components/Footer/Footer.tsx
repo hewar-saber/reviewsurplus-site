@@ -15,7 +15,7 @@ export default function Footer() {
                     }}
                 >
                     <img
-                        src='/images/logo.svg'
+                        src='/images/logo-white.svg'
                         alt='ReviewSurplus'
                         className={styles.logo}
                         width={200}
@@ -30,8 +30,8 @@ export default function Footer() {
             </div>
             <div className={styles.section}>
                 <Buttons>
-                    <CaseStudyCTA />
-                    <CTA />
+                    <CaseStudyCTA reverse />
+                    <CTA reverse />
                 </Buttons>
             </div>
 

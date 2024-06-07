@@ -16,7 +16,7 @@ import LinkWrapper from '@/components/LinkWrapper/LinkWrapper'
 
 export default function WebDesignAndSeo() {
     return (
-        <Main>
+        <Main noPaddingTop>
             <section className={styles.hero}>
                 <h1>
                     <Highlight>Grow Revenue</Highlight> with a High-Traffic,
@@ -35,7 +35,7 @@ export default function WebDesignAndSeo() {
             <section className={styles.stakes}>
                 <h2>
                     Lack of a Professional Website is Costing you{' '}
-                    <Highlight>Thousands</Highlight>
+                    <Highlight>$$$</Highlight>
                 </h2>
                 <p>
                     How many clients leave because your website is{' '}
@@ -64,18 +64,21 @@ export default function WebDesignAndSeo() {
                 <Cards>
                     <SmallCard
                         imgSrc={rankIcon.src}
+                        imgWidth={30}
                         imgAlt='Rank Icon'
                         title='Ranks on Google'
                         description="We will build a website that ranks high on Google so you don't miss out on the huge traffic."
                     />
                     <SmallCard
                         imgSrc={flashIcon.src}
+                        imgWidth={30}
                         imgAlt='Rank Icon'
                         title='Fast & Beautiful'
                         description="You will get a website that is both fast & beautiful, ensuring that users don't get frustrated by load time."
                     />
                     <SmallCard
                         imgSrc={moneyBagIcon.src}
+                        imgWidth={30}
                         imgAlt='Money Bag Icon'
                         title='Increased Revenue'
                         description='You now have an increased revenue as a result of the higher ranking on Google and higher conversion rate.'

@@ -3,4 +3,5 @@
     margin: 0 calc(-1 * var(--body-padding));
     border: none;
     border-top: var(--light-border);
+    opacity: 0.2;
 }

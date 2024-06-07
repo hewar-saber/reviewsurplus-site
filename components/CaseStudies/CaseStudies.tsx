@@ -1,4 +1,5 @@
 import { WithArrow } from '../Buttons/Buttons'
+import LinkWrapper from '../LinkWrapper/LinkWrapper'
 import styles from './CaseStudies.module.scss'
 import Image from 'next/image'
 
@@ -18,14 +19,16 @@ export default function CaseStudies() {
                 <figcaption>
                     <b className={styles.title}>
                         Web design for{' '}
-                        <a
-                            href='https://fotballbilletter.no'
-                            target='_blank'
-                            rel='noreferrer nofollow
+                        <LinkWrapper>
+                            <a
+                                href='https://fotballbilletter.no'
+                                target='_blank'
+                                rel='noreferrer nofollow
 				'
-                        >
-                            Fotballbilletter.no
-                        </a>
+                            >
+                                Fotballbilletter.no
+                            </a>
+                        </LinkWrapper>
                     </b>
                     <p>
                         We built a fast & beautiful website for
@@ -53,14 +56,16 @@ export default function CaseStudies() {
                 <figcaption>
                     <b className={styles.title}>
                         Visual Identity for{' '}
-                        <a
-                            href='https://fotballbilletter.no'
-                            target='_blank'
-                            rel='noreferrer nofollow
-				'
-                        >
-                            Fotballbilletter.no
-                        </a>
+                        <LinkWrapper>
+                            <a
+                                href='https://fotballbilletter.no'
+                                target='_blank'
+                                rel='noreferrer nofollow
+                            '
+                            >
+                                Fotballbilletter.no
+                            </a>
+                        </LinkWrapper>
                     </b>
                     <p>
                         We created a visual identity that consists a joyful set

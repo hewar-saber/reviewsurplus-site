@@ -17,7 +17,7 @@ export default function SmallCard({
         <figure className={styles.smallCard}>
             <img src={imgSrc} alt={imgAlt} width={imgWidth} />
             <figcaption>
-                <b>{title}</b>
+                <b className={styles.title}>{title}</b>
                 <p>{description}</p>
             </figcaption>
         </figure>

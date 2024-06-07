@@ -17,7 +17,7 @@ import { Cards } from '@/components/SmallCard/SmallCard'
 
 export default function Page() {
     return (
-        <Main>
+        <Main noPaddingTop>
             <section className={styles.hero}>
                 <h1>
                     <Highlight>Increase Revenue</Highlight> with Sales Optimized
@@ -29,10 +29,10 @@ export default function Page() {
                     <Highlight>50+ five-star reviews</Highlight> in under 10
                     days
                 </p>
-                <div className={styles.buttons}>
+                <Buttons>
                     <CaseStudyCTA />
                     <CTA />
-                </div>
+                </Buttons>
             </section>
             <FullLine />
 
@@ -43,8 +43,8 @@ export default function Page() {
                         <img
                             src={websiteIcon.src}
                             alt='Website Icon'
-                            width={40}
-                            height={40}
+                            width={30}
+                            height={30}
                         />
                         <figcaption>
                             <b className={styles.title}>Web Design & SEO</b>
@@ -61,18 +61,22 @@ export default function Page() {
                                 with sales optimized, speed optimized and
                                 beautiful websites.
                             </p>
-                            <div className={styles.buttons}>
+                            <Buttons
+                                style={{
+                                    justifyContent: 'start'
+                                }}
+                            >
                                 <CaseStudyCTA />
                                 <CTA />
-                            </div>
+                            </Buttons>
                         </figcaption>
                     </figure>
                     <figure className={styles.valueCard}>
                         <img
                             src={starIcon.src}
                             alt='Website Icon'
-                            width={40}
-                            height={40}
+                            width={30}
+                            height={30}
                         />
                         <figcaption>
                             <b className={styles.title}>
@@ -93,10 +97,14 @@ export default function Page() {
                                 yours get more 5-star reviews and bury those
                                 negative reviews.
                             </p>
-                            <div className={styles.buttons}>
+                            <Buttons
+                                style={{
+                                    justifyContent: 'start'
+                                }}
+                            >
                                 <LearnMoreCTA href='/online-reputation-management' />
                                 <CTA />
-                            </div>
+                            </Buttons>
                         </figcaption>
                     </figure>
                 </div>
@@ -111,7 +119,7 @@ export default function Page() {
                     <SmallCard
                         imgSrc={websiteIcon.src}
                         imgAlt='Website Icon'
-                        imgWidth={40}
+                        imgWidth={30}
                         title='Website That Sells'
                         description='You will get a website that ranks on Google, and converts the traffic to paying clients'
                     />
@@ -119,7 +127,7 @@ export default function Page() {
                     <SmallCard
                         imgSrc={starIcon.src}
                         imgAlt='Star Icon'
-                        imgWidth={40}
+                        imgWidth={30}
                         title='More 5-star reviews'
                         description='You will get more 5-star reviews. As a result, clients trust you more, and you rank higher on Google.'
                     />
@@ -127,7 +135,7 @@ export default function Page() {
                     <SmallCard
                         imgSrc={moneybagIcon.src}
                         imgAlt='Moneybag Icon'
-                        imgWidth={40}
+                        imgWidth={30}
                         title='Increased Revenue'
                         description='You now have an increased revenue as a result of the higher ranking on Google and increased trust.'
                     />
@@ -146,14 +154,14 @@ export default function Page() {
                     <SmallCard
                         imgSrc={calendarIcon.src}
                         imgAlt='Calendar Icon'
-                        imgWidth={40}
+                        imgWidth={30}
                         title='Book a Call'
                         description='Choose a time slot that fits your schedule'
                     />
                     <SmallCard
                         imgSrc={analyseIcon.src}
                         imgAlt='Analyse Icon'
-                        imgWidth={40}
+                        imgWidth={30}
                         title='Analyse Your Situation'
                         description='We will analyse your situation and decide whether you need a new website, a redesign or more Google reviews.'
                     />
@@ -161,7 +169,7 @@ export default function Page() {
                     <SmallCard
                         imgSrc={draftIcon.src}
                         imgAlt='Pen Icon'
-                        imgWidth={40}
+                        imgWidth={30}
                         title='First Draft Within Days'
                         description='We will deliver the first draft of your website within days. For the software, we will set it up immediately.'
                     />

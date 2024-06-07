@@ -5,7 +5,13 @@
     color: inherit;
     a {
         color: var(--a-color);
-        border-bottom: 1.2px solid currentColor;
         text-decoration: none;
+        font-weight: inherit;
+    }
+
+    &.underline {
+        a {
+            border-bottom: 1.2px solid currentColor;
+        }
     }
 }

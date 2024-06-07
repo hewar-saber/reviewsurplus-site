@@ -1,155 +1,214 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline-offset: 0;
 }
 
 html {
-	font-size: 62.5%;
-	scroll-behavior: smooth;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 :root {
-	--title-font-family: "ivypresto-display", serif;
-	--title-line-height: 116.3%;
-	--body-padding: clamp(25px, 10vw, 100px);
-	--padding: var(--gap-2) var(--body-padding);
-	--header-height: 80px;
-	--gap-1: 10px;
-	--gap-2: 20px;
-	--gap-3: 30px;
-	--gap-4: 50px;
-	--gap-5: 65px;
-	--section-max-width: 650px;
+    /** Global */
+    --body-padding: clamp(30px, 10vw, 100px);
+    --header-height: 80px;
 
-	--paragraph-size-1: 1.6rem;
-	--paragraph-size-2: 1.8rem;
-	--paragraph-size-3: 2.2rem;
-	--title-1: clamp(4rem, 10vw, 7rem);
-	--title-2: clamp(2.7rem, 10vw, 4.7rem);
-	--title-3: clamp(2.7rem, 10vw, 3.2rem);
-	--line-height: 130%;
+    /** Spacing */
+    --group-big: 40px;
+    --group-medium: 30px;
+    --group-small: 15px;
+    --row-spacing: clamp(50px, 10vh, 100px);
 
-	--form-element-radius: 12px;
-	--background-100: #fff;       /* #FFFFFF */
-	--background-200: #f9fbff;    /* A slightly bluish tint */
-	--background-300: #f3f7ff;    /* Increasing the blue presence */
-	--background-400: #edf3ff;    /* A softer light blue */
-	--background-500: #e7efff;    /* Gently moving towards CEE2FF */
-	--background-600: #e1ebff;    /* Closer hue to target color */
-	--background-700: #dbe7ff;    /* Almost there */
-	--background-800: #d5e3ff;    /* Just a touch away from CEE2FF */
-	--background-900: #cfdfff;    /* Very close to CEE2FF */
-	--background-1000: #cee2ff;   /* Target color CEE2FF */
-	
-	
+    /** Card padding */
+    --card-big-padding: 40px;
+    --card-medium-padding: 30px;
+    --card-small-padding: 15px;
 
-	--background-100-rgb: 255, 255, 255;
+    /** Card border radius */
+    --card-big-radius: 50px;
+    --card-medium-radius: 30px;
+    --card-small-radius: 20px;
 
-	--foreground-100: #000;
-	--foreground-200: #303030;
-	--foreground-300: #505050;
-	--foreground-400: #707070;
-	--foreground-500: #808080;
-	--foreground-600: #909090;
+    /**Max width */
+    --section-max-width: 650px;
 
-	--primary-100: #FFD900;
-	--primary-200: #ff7300;
-	--primary-300: #ffa600;
-	--primary-400: #ffd900;
-	--primary-500: #f2ff00;
-	--primary-600: #ffea00;
-	--primary-700: #bfff00;
-	--red: #e83e15;
-	--red-100: #FF0000;
-	--red-200: #e83e15;
-	--green: #084607;
-	--yellow: #f6cc0f;
+    /** Typography */
 
-	--error: #a41900;
-	--a-color: #0d3da4;
+    /** Paragraph */
+    --body-size-1: 1.6rem;
+    --body-size-2: 1.8rem;
+    --body-size-3: 2rem;
 
-	--outline: 2px solid rgba(30, 143, 255, 0.616);
+    /** Heading */
+    --title-1: clamp(4rem, 10vw, 7rem);
+    --title-2: clamp(2.7rem, 10vw, 4.7rem);
+    --title-3: clamp(2.5rem, 10vw, 3.2rem);
 
-	--gradient-1: linear-gradient(
-		90deg,
-		var(--background-100) 0%,
-		var(--background-1000) 100%
-	);
-	--default-transition: 400ms ease;
+    /** Colors */
 
-	--light-border: 0.5px solid var(--foreground-600);
-	--light-border-on-primary: 0.5px solid var(--primary-200);
-	--rotate: rotate 1.5s linear infinite;
-	--rotate-2: rotate-2 1.5s linear infinite;
-	--card-padding: 20px;
-	--card-radius: 15px;
-	--card-radius-2: 30px;
-	--card-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /** Primary */
+    --primary-100: #fb9804;
+    --primary-200: #ffa334;
+    --primary-300: #ffaf51;
+    --primary-400: #ffba6a;
+    --primary-500: #ffc683;
+    --primary-600: #ffd19c;
 
-	--inline-button-width: 55px;
+    /** Background */
+    --background-100: #ffffff;
+    --background-200: #def2ff;
+    --background-300: #bce5ff;
+    --background-400: #96d9ff;
+    --background-500: #68ccff;
+    --background-600: #00bfff;
 
-	--shake-animation: shake 3s ease-in-out infinite;
+    /** Background Reverse */
+    --background-reverse-100: #000000;
+    --background-reverse-200: #162730;
+    --background-reverse-300: #1e495e;
+    --background-reverse-400: #216e91;
+    --background-reverse-500: #1d95c6;
+    --background-reverse-600: #00bfff;
 
-	--button-padding: 12px;
+    /** Foreground */
+    --foreground-100: #000000;
+    --foreground-200: #1d1d1d;
+    --foreground-300: #333333;
+    --foreground-400: #4c4c4c;
+    --foreground-500: #656565;
+    --foreground-600: #808080;
+
+    /** Gradients */
+    --gradient: linear-gradient(
+        90deg,
+        var(--background-100) 0%,
+        var(--background-200) 100%
+    );
+
+    --gradient-reverse: linear-gradient(
+        90deg,
+        var(--background-reverse-100) 0%,
+        var(--background-reverse-200) 100%
+    );
+
+    --gradient-radial: radial-gradient(
+        ellipse at left,
+        var(--background-200) 0%,
+        var(--background-100) 70%,
+        var(--background-100) 100%
+    );
+
+    /** Other */
+    --error: #a41900;
+    --a-color: #3f92df;
+    --outline-color: #00d1ff;
+    --scale: 1.02;
+
+    /** Form */
+    --form-element-radius: 20px;
+    --form-element-padding: 10px;
+
+    /** Border and shadow */
+    --outline: 1px solid var(--outline-color);
+    --light-border: 0.5px solid var(--foreground-600);
+    --card-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --button-shadow: 0px 4px 4px 0px rgba(100, 100, 100, 0.25);
+    --button-shadow-reverse: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
+
+    /** Animation */
+    --default-transition: 400ms ease;
+    --rotate: rotate 1.5s linear infinite;
+    --shake-animation: shake 3s ease-in-out infinite;
 }
 
 body {
-	position: relative;
-	background-color: var(--background-100);
-	min-width: 250px;
-	margin: 0 auto;
-	max-width: calc(1500px + var(--body-padding) * 2);
+    position: relative;
+    background-color: var(--background-100);
+    min-width: 250px;
+    margin: 0 auto;
+    max-width: calc(1500px + var(--body-padding) * 2);
 }
 
-h1,
+h1 {
+    font-size: var(--title-1);
+    font-weight: 700;
+}
+
 h2,
-h3,
+h3 {
+    font-size: var(--title-2);
+    font-weight: 600;
+}
+
 h4,
 h5,
 h6 {
-	font-weight: bolder;
-	line-height: 115%;
+    font-size: var(--title-3);
+    font-weight: 500;
 }
 
 p,
 b,
 a {
-    font-size: var(--paragraph-size-1);
-	line-height: var(--line-height);
+    font-size: var(--body-size-1);
+}
+
+a {
+    font-weight: inherit;
+}
+
+p,
+span,
+div {
+    color: var(--foreground-300);
 }
 
 .error {
-	color: var(--error);
-	font-size: var(--paragraph-size-1);
+    color: var(--error);
+    font-size: var(--body-size-1);
 }
 
 .error:empty {
-	display: none;
+    display: none;
 }
 
+p,
+button,
+a,
+span,
+div,
+b,
+i {
+    font-size: var(--body-size-1);
+    color: var(--foreground-100);
+    font-weight: 300;
+}
 
+b,
+strong {
+    font-weight: 600;
+}
 
-p, button, a, span, div, b, i{
-	font-size: var(--paragraph-size-1);
-	color: var(--foreground-100);
+a {
+    text-decoration: none;
+    color: var(--foreground-100);
 }
 
 @media (max-width: 600px) {
-	:root {
-		/* --body-padding: 25px; */
-		--header-height: 70px;
-	}
+    :root {
+        /* --body-padding: 25px; */
+        --header-height: 70px;
+    }
 }
 
-
-
 @keyframes rotate {
-	from {
-		transform: translate(-50%, -50%) rotate(0deg);
-	}
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
 
-	to {
-		transform: translate(-50%, -50%) rotate(360deg);
-	}
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }

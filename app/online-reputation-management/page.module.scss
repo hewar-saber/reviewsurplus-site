@@ -3,24 +3,21 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: var(--body-padding);
-    min-height: calc(100vh - 2 * var(--body-padding) - var(--header-height));
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
+    background: var(--gradient-radial);
 }
 
 .hero .details {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-4);
+    gap: var(--group-big);
 }
 
 .hero .details .text {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-2);
-}
-
-.hero .details .text h1 {
-    font-size: var(--title-1);
-    color: var(--foreground-100);
+    gap: var(--group-small);
 }
 
 .hero .details .text p {
@@ -38,112 +35,79 @@
 .hero .calendar {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
+    gap: var(--group-medium);
 }
 
 .stakes {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
-    h2 {
-        font-size: var(--title-3);
-        color: var(--foreground-100);
-    }
-    p,
-    b {
-        font-size: var(--paragraph-size-2);
-        color: var(--foreground-200);
+    gap: var(--group-medium);
+    p {
+        max-width: var(--section-max-width);
     }
 }
 
 .value {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
+    gap: var(--group-medium);
     width: calc(100% + 2 * var(--body-padding));
     margin: 0 calc(-1 * var(--body-padding));
     padding: var(--body-padding);
-    background: var(--gradient-1);
-
-    h3 {
-        font-size: var(--title-3);
-        color: var(--foreground-100);
-    }
+    background: var(--gradient);
 }
 
 .caseStudies {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
-    h4 {
-        font-size: var(--title-3);
-        color: var(--foreground-100);
-    }
+    gap: var(--group-medium);
 }
 
 .howWeDo,
 .ourPlan {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
+    gap: var(--group-medium);
 }
 
 .howWeDo {
     width: calc(100% + 2 * var(--body-padding));
     margin: 0 calc(-1 * var(--body-padding));
     padding: var(--body-padding);
-    background: var(--background-300);
+    background: var(--background-200);
 }
 
 .howWeDo .title,
 .ourPlan .title {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-2);
-}
-
-.howWeDo h5,
-.ourPlan h4 {
-    font-size: var(--title-3);
-    color: var(--foreground-100);
+    gap: var(--group-small);
 }
 
 .howWeDo p,
 .ourPlan p {
-    font-size: var(--paragraph-size-2);
-    color: var(--foreground-300);
     max-width: var(--section-max-width);
-    /* background: red; */
 }
 
 .explanatory {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
-}
-
-.explanatory h6 {
-    font-size: var(--title-3);
-    color: var(--foreground-100);
+    gap: var(--group-medium);
+    max-width: var(--section-max-width);
+    margin: 0 auto;
 }
 
 .explanatory .text {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-2);
-}
-
-.explanatory .text p,
-.explanatory .text ol li {
-    font-size: var(--paragraph-size-1);
-    color: var(--foreground-300);
+    gap: var(--group-small);
 }
 
 .explanatory .text ol {
     list-style-position: inside;
     display: flex;
     flex-direction: column;
-    gap: var(--gap-1);
+    gap: var(--group-small);
 }
 
 .line {
@@ -157,35 +121,32 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--gap-3);
+    gap: var(--group-medium);
     align-items: center;
 }
 
 .faq h6 {
     text-align: center;
-    font-size: var(--title-2);
-    color: var(--foreground-100);
 }
 
 .faq dl {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-1);
-    font-size: var(--paragraph-size-1);
+    gap: var(--group-small);
     max-width: var(--section-max-width);
 }
 
 .faq dl dt {
-    font-weight: bolder;
     text-align: center;
-    font-size: var(--paragraph-size-2);
+    font-size: var(--body-size-1);
 }
 
 .faq dl dd {
-    margin-bottom: var(--gap-2);
+    margin-bottom: var(--group-small);
     color: var(--foreground-300);
     text-align: center;
+    font-size: var(--body-size-1);
 }
 
 @media (max-width: 1000px) {
