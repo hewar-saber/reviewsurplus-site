@@ -2,21 +2,20 @@ import { CSSProperties } from 'react'
 import styles from './CTA.module.scss'
 import Link from 'next/link'
 export default function CTA({
-    inPage = false,
     color,
     style,
     reverse = false,
     className = ''
 }: {
-    inPage?: boolean
     color?: 'red'
     style?: CSSProperties
     reverse?: boolean
     className?: string
 }) {
+    const bookingUrl = process.env.BOOKING_URL
     return (
         <a
-            href={inPage ? '#booking' : '/booking'}
+            href={bookingUrl}
             className={`${styles.cta} ${color ? styles.red : ''} 
             ${reverse ? styles.reverse : ''} ${className}`}
             style={style}

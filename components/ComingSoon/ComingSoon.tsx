@@ -8,7 +8,7 @@ export default function ComingSoon() {
             <h1>Coming Soon</h1>
             <p>We are working on something awesome. Stay tuned!</p>
             <Buttons>
-                <WithArrow href='/' type='secondary'>
+                <WithArrow href='/' type='secondary' fullHeight>
                     Home
                 </WithArrow>
                 <CTA />

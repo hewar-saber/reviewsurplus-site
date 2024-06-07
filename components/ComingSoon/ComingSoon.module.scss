@@ -3,12 +3,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: var(--gap-2);
+    gap: var(--group-medium);
     padding: 0 var(--body-padding);
     height: calc(100vh - var(--header-height));
-    h1 {
-        font-size: var(--title-1);
-    }
     p {
         text-align: center;
     }

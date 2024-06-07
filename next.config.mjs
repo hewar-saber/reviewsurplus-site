@@ -2,7 +2,8 @@
 const nextConfig = {
     env: {
         RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
-        WEBSITE_URL: process.env.WEBSITE_URL
+        WEBSITE_URL: process.env.WEBSITE_URL,
+        BOOKING_URL: process.env.BOOKING_URL
     },
     experimental: {
         swcMinify: false,
