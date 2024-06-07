@@ -21,12 +21,7 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <Link href='/' aria-label='Navigate to Home Page'>
-                <Image
-                    alt='Logo'
-                    width={parseInt(`${208 * 0.6}`)}
-                    height={parseInt(`${89 * 0.6}`)}
-                    src={'/images/logo.svg'}
-                ></Image>
+                <img alt='Logo' width={100} src={'/images/logo.svg'}></img>
             </Link>
             <div className={styles.links}>
                 <Link href='/webdesign-and-seo' className={styles.link}>

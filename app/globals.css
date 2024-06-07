@@ -13,7 +13,7 @@ html {
 :root {
     /** Global */
     --body-padding: clamp(30px, 10vw, 100px);
-    --header-height: 80px;
+    --header-height: 100px;
 
     /** Spacing */
     --group-big: 40px;
@@ -199,7 +199,7 @@ a {
 @media (max-width: 600px) {
     :root {
         /* --body-padding: 25px; */
-        --header-height: 70px;
+        --header-height: 80px;
     }
 }
 
