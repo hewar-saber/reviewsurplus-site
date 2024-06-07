@@ -8,6 +8,15 @@ const nextConfig = {
     experimental: {
         swcMinify: false,
         serverMinification: false
+    },
+    redirects: async () => {
+        return [
+            {
+                source: '/booking',
+                destination: process.env.BOOKING_URL,
+                permanent: true
+            }
+        ]
     }
 }
 
