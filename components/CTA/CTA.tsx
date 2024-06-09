@@ -40,13 +40,13 @@ export function CaseStudyCTA({
 }) {
     return (
         <Link
-            href='/case-studies'
+            href='/projects'
             className={`${styles.secondary} ${color ? styles.red : ''} ${
                 reverse ? styles.reverse : ''
             } ${className}`}
             style={style}
         >
-            View Case Studies
+            View Projects
         </Link>
     )
 }

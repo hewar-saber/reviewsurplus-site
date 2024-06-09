@@ -144,7 +144,7 @@ export default function Page() {
             </section>
 
             <div className={styles.caseStudies}>
-                <h4>Case Studies</h4>
+                <h4>Projects</h4>
                 <CaseStudies />
             </div>
 

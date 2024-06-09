@@ -24,7 +24,7 @@ export default function Header() {
                 <img alt='Logo' width={100} src={'/images/logo.svg'}></img>
             </Link>
             <div className={styles.links}>
-                <Link href='/webdesign-and-seo' className={styles.link}>
+                <Link href='/webdesign' className={styles.link}>
                     Web Design & SEO
                 </Link>
                 <Link

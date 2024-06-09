@@ -38,10 +38,8 @@ export default function Footer() {
             <div className={styles.section}>
                 <b>Services</b>
                 <div className={styles.links}>
-                    <Link href={'/services/webdesign-and-seo'}>
-                        Web Design & SEO
-                    </Link>
-                    <Link href={'/services/online-reputation-management'}>
+                    <Link href={'/webdesign'}>Web Design & SEO</Link>
+                    <Link href={'/online-reputation-management'}>
                         Reputation Management
                     </Link>
                 </div>
