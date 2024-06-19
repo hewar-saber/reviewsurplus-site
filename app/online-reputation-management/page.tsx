@@ -14,7 +14,7 @@ import researchIcon from '@/public/icons/research.svg'
 import trendDown from '@/public/icons/trend-down.svg'
 import warning from '@/public/icons/warning.svg'
 
-import starIcon from '@/public/icons/star.svg'
+import starIcon from '@/public/icons/Star.svg'
 import searchIcon from '@/public/icons/search.svg'
 import trendUp from '@/public/icons/trend-up.svg'
 
