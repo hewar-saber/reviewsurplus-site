@@ -166,7 +166,8 @@ a,
 span,
 div,
 b,
-i {
+i,
+summary {
     font-size: var(--body-size-1);
     color: var(--foreground-300);
     font-weight: 300;
@@ -201,4 +202,31 @@ a {
 
 * {
     scroll-margin-top: var(--header-height);
+}
+
+/* Dark Theme */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-100: #1a1a1a;
+        --background-200: #000000;
+
+        --foreground-100: #fff;
+        --foreground-200: #e4e4e4;
+        --foreground-300: #cacaca;
+        --foreground-400: #b1b1b1;
+        --foreground-500: #989898;
+        --foreground-600: #808080;
+
+        --secondary-100: #00bfff;
+        --secondary-200: #19a1d6;
+        --secondary-300: #2084af;
+        --secondary-400: #216989;
+        --secondary-500: #1f4e65;
+        --secondary-600: #1a3543;
+
+        --error: red;
+        --a-color: #0099ff;
+        --button-shadow: 0px 4px 4px 0px rgba(169, 169, 169, 0.2);
+    }
 }

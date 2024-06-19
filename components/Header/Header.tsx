@@ -7,7 +7,13 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <Link href='/' aria-label='Navigate to Home Page'>
-                <img alt='Logo' width={100} src={'/images/logo.svg'}></img>
+                <picture>
+                    <source
+                        srcSet='/images/logo-white.svg'
+                        media='(prefers-color-scheme: dark)'
+                    />
+                    <img alt='Logo' width={100} src={'/images/logo.svg'}></img>
+                </picture>
             </Link>
             <div className={styles.links}>
                 <Link href='#how' className={styles.link}>

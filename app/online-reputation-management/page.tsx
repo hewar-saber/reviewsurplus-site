@@ -5,28 +5,40 @@ import CTA from '@/components/CTA/CTA'
 import FullLine from '@/components/FullLine/FullLine'
 import SmallCard, { Cards } from '@/components/SmallCard/SmallCard'
 
-import calendarIcon from '@/public/icons/calendar.svg'
 import { SmallRows } from '@/components/Flex/Flex'
 import noTrust from '@/public/icons/no-trust.svg'
 
+import calendarIcon from '@/public/icons/calendar.svg'
 import researchIcon from '@/public/icons/research.svg'
-
 import trendDown from '@/public/icons/trend-down.svg'
 import warning from '@/public/icons/warning.svg'
-
 import starIcon from '@/public/icons/Star.svg'
 import searchIcon from '@/public/icons/search.svg'
 import trendUp from '@/public/icons/trend-up.svg'
+
+import calendarIconWhite from '@/public/icons/white-calendar.svg'
+import researchIconWhite from '@/public/icons/white-research.svg'
+import trendDownWhite from '@/public/icons/white-trend-down.svg'
+import warningWhite from '@/public/icons/white-warning.svg'
+import starIconWhite from '@/public/icons/white-star.svg'
+import searchIconWhite from '@/public/icons/white-search.svg'
+import trendUpWhite from '@/public/icons/white-trend-up.svg'
 
 export default function Page() {
     return (
         <Main>
             <section className={styles.hero}>
-                <img
-                    src='/images/Robert Greene.webp'
-                    alt='Robert Greene'
-                    width='400'
-                />
+                <picture>
+                    <source
+                        srcSet='/images/white-robert-greene.webp'
+                        media='(prefers-color-scheme: dark)'
+                    />
+                    <img
+                        src='/images/Robert Greene.webp'
+                        alt='Robert Greene'
+                        width='400'
+                    />
+                </picture>
                 <SmallRows>
                     <h1>
                         <Highlight>More Sales</Highlight> with Increased Reviews
@@ -48,6 +60,7 @@ export default function Page() {
                 </p>
                 <Cards>
                     <SmallCard
+                        darkThemeSrc={trendDownWhite.src}
                         imgSrc={noTrust.src}
                         imgWidth={50}
                         imgAlt='Lost Trust Icon'
@@ -55,6 +68,7 @@ export default function Page() {
                         description='A lack of reviews makes potential customers doubt the quality of your services or products.'
                     />
                     <SmallCard
+                        darkThemeSrc={trendDownWhite.src}
                         imgSrc={trendDown.src}
                         imgWidth={50}
                         imgAlt='Trend Down Icon'
@@ -63,6 +77,7 @@ export default function Page() {
                     />
 
                     <SmallCard
+                        darkThemeSrc={trendDownWhite.src}
                         imgSrc={warning.src}
                         imgWidth={50}
                         imgAlt='Warning Icon'
@@ -76,6 +91,7 @@ export default function Page() {
                 <h3>More 5-Star Reviews Solves Your Problem</h3>
                 <Cards>
                     <SmallCard
+                        darkThemeSrc={starIconWhite.src}
                         imgSrc={starIcon.src}
                         imgWidth={50}
                         imgAlt='Star Icon'
@@ -83,6 +99,7 @@ export default function Page() {
                         description='More five-star reviews build trust with new customers and strengthen your reputation.'
                     />
                     <SmallCard
+                        darkThemeSrc={trendUpWhite.src}
                         imgSrc={trendUp.src}
                         imgWidth={50}
                         imgAlt='Trend Up Icon'
@@ -90,6 +107,7 @@ export default function Page() {
                         description='Positive reviews can directly increase sales by convincing hesitant buyers to make a purchase.'
                     />
                     <SmallCard
+                        darkThemeSrc={searchIconWhite.src}
                         imgSrc={searchIcon.src}
                         imgWidth={50}
                         imgAlt='Search Icon'
@@ -133,6 +151,7 @@ export default function Page() {
                 </p>
                 <Cards>
                     <SmallCard
+                        darkThemeSrc={calendarIconWhite.src}
                         imgWidth={50}
                         imgSrc={calendarIcon.src}
                         imgAlt='Calendar Icon'
@@ -140,6 +159,7 @@ export default function Page() {
                         description='Choose a time slot that fits your schedule'
                     />
                     <SmallCard
+                        darkThemeSrc={researchIconWhite.src}
                         imgWidth={50}
                         imgSrc={researchIcon.src}
                         imgAlt='Set Up Icon'
@@ -147,6 +167,7 @@ export default function Page() {
                         description='We will set up the software & upload your customer list.'
                     />
                     <SmallCard
+                        darkThemeSrc={starIconWhite.src}
                         imgWidth={50}
                         imgSrc={starIcon.src}
                         imgAlt='Star Icon'

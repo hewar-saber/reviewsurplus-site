@@ -6,18 +6,30 @@ import FullLine from '@/components/FullLine/FullLine'
 import SmallCard, { Cards } from '@/components/SmallCard/SmallCard'
 
 import calendarIcon from '@/public/icons/calendar.svg'
+import calendarIconWhite from '@/public/icons/white-calendar.svg'
+
 import { SmallRows } from '@/components/Flex/Flex'
 import Projects from '@/components/Projects/Projects'
 import badCopy from '@/public/icons/bad-copy.svg'
+import badCopyWhite from '@/public/icons/white-bad-copy.svg'
 import badDesign from '@/public/icons/bad-design.svg'
+import badDesignWhite from '@/public/icons/white-bad-design.svg'
 import noTrust from '@/public/icons/no-trust.svg'
+import noTrustWhite from '@/public/icons/white-no-trust.svg'
 
 import goodCopy from '@/public/icons/good-copy.svg'
+import goodCopyWhite from '@/public/icons/white-good-copy.svg'
+
 import goodDesign from '@/public/icons/good-design.svg'
+import goodDesignWhite from '@/public/icons/white-good-design.svg'
 import goodWebsite from '@/public/icons/good-website.svg'
+import goodWebsiteWhite from '@/public/icons/white-good-website.svg'
 
 import researchIcon from '@/public/icons/research.svg'
+import reasearchIconWhite from '@/public/icons/white-research.svg'
+
 import launchIcon from '@/public/icons/launch.svg'
+import launchIconWhite from '@/public/icons/white-launch.svg'
 
 export default function Page() {
     return (
@@ -53,6 +65,7 @@ export default function Page() {
                 <Cards>
                     <SmallCard
                         imgSrc={badCopy.src}
+                        darkThemeSrc={badCopyWhite.src}
                         imgWidth={50}
                         imgAlt='Bad Copy Icon'
                         title='Poor Copy'
@@ -60,6 +73,7 @@ export default function Page() {
                     />
                     <SmallCard
                         imgSrc={badDesign.src}
+                        darkThemeSrc={badDesignWhite.src}
                         imgWidth={50}
                         imgAlt='Ineffective Design Icon'
                         title='Ineffective Design'
@@ -68,6 +82,7 @@ export default function Page() {
 
                     <SmallCard
                         imgSrc={noTrust.src}
+                        darkThemeSrc={noTrustWhite.src}
                         imgWidth={50}
                         imgAlt='Lack of Trust Icon'
                         title='Lack of Trust'
@@ -81,6 +96,7 @@ export default function Page() {
                 <Cards>
                     <SmallCard
                         imgSrc={goodCopy.src}
+                        darkThemeSrc={goodCopyWhite.src}
                         imgWidth={50}
                         imgAlt='Pen writing Icon'
                         title='Persuasive Copy'
@@ -88,6 +104,7 @@ export default function Page() {
                     />
                     <SmallCard
                         imgSrc={goodDesign.src}
+                        darkThemeSrc={goodDesignWhite.src}
                         imgWidth={50}
                         imgAlt='Paintboard Icon'
                         title='Timeless Design'
@@ -95,6 +112,7 @@ export default function Page() {
                     />
                     <SmallCard
                         imgSrc={goodWebsite.src}
+                        darkThemeSrc={goodWebsiteWhite.src}
                         imgWidth={50}
                         imgAlt='Star Icon'
                         title='High Conversion'
@@ -131,6 +149,7 @@ export default function Page() {
                     <SmallCard
                         imgWidth={50}
                         imgSrc={calendarIcon.src}
+                        darkThemeSrc={calendarIconWhite.src}
                         imgAlt='Calendar Icon'
                         title='Book a Call'
                         description='Choose a time slot that fits your schedule'
@@ -138,6 +157,7 @@ export default function Page() {
                     <SmallCard
                         imgWidth={50}
                         imgSrc={researchIcon.src}
+                        darkThemeSrc={reasearchIconWhite.src}
                         imgAlt='Market Research Icon'
                         title='Market Research'
                         description='We will analyze your situation and research your market'
@@ -145,6 +165,7 @@ export default function Page() {
                     <SmallCard
                         imgWidth={50}
                         imgSrc={launchIcon.src}
+                        darkThemeSrc={launchIconWhite.src}
                         imgAlt='High Conversion Website Icon'
                         title='High Conversion Website'
                         description="We'll test and launch your high-conversion website and keep in touch."
