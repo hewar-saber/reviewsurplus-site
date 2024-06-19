@@ -6,40 +6,33 @@
     gap: var(--group-big);
     background: var(--gradient-radial);
 
-    margin: 0 calc(-1 * var(--body-padding));
-    padding: var(--body-padding);
+    // margin: 0 calc(-1 * var(--body-padding));
+    // padding: var(--body-padding);
 
     h1 {
         text-align: center;
+        max-width: var(--section-max-width);
     }
-    p {
+    .txt {
         text-align: center;
+        font-size: var(--body-size-3);
+        max-width: var(--section-max-width);
     }
 }
 .stakes {
     display: flex;
     flex-direction: column;
     gap: var(--group-big);
+    align-items: center;
+    h2 {
+        text-align: center;
+        max-width: var(--section-max-width);
+    }
 
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: var(--group-medium);
-
-        .valueCard {
-            display: flex;
-            flex-direction: column;
-            gap: var(--group-medium);
-
-            figcaption {
-                display: inherit;
-                flex-direction: inherit;
-                gap: inherit;
-                .title {
-                    font-size: var(--body-size-2);
-                }
-            }
-        }
+    .description {
+        max-width: var(--section-max-width);
+        font-size: var(--body-size-3);
+        text-align: center;
     }
 }
 
@@ -55,18 +48,24 @@
     background: var(--gradient);
 
     h3 {
-        font-size: var(--title-3);
         text-align: center;
+        max-width: var(--section-max-width);
     }
 }
 
-.caseStudies {
+.socialProof {
     display: flex;
     flex-direction: column;
     gap: var(--group-big);
-
+    align-items: center;
     h4 {
-        font-size: var(--title-3);
+        text-align: center;
+        max-width: var(--section-max-width);
+    }
+    p {
+        text-align: center;
+        max-width: var(--section-max-width);
+        font-size: var(--body-size-3);
     }
 }
 
@@ -80,33 +79,96 @@
     padding: var(--body-padding);
     background: var(--gradient);
 
+    .description {
+        max-width: var(--section-max-width);
+        text-align: center;
+        font-size: var(--body-size-3);
+    }
+
     h5 {
         text-align: center;
     }
 }
 
-.reviewSurplus {
+.projects {
     display: flex;
     gap: var(--group-big);
-    align-items: center;
-    .column {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: var(--group-big);
-        position: relative;
-        align-items: center;
-        justify-content: center;
+    overflow-x: auto;
+    margin: 0 calc(-1 * var(--body-padding));
+    transform: var(--rorate);
+    display: flex;
+    flex-direction: column;
+    gap: inherit;
+}
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            gap: var(--group-medium);
+.faq {
+    display: flex;
+    gap: var(--row-spacing);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--group-big);
+
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+
+    width: 100%;
+    background: var(--gradient-radial);
+
+    h6 {
+        text-align: center;
+    }
+    details {
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--section-max-width);
+
+        summary {
+            cursor: pointer;
+            font-size: var(--body-size-3);
+            font-weight: 500;
+
+            &::marker {
+                content: '';
+            }
+
+            &::after {
+                content: '+';
+                float: right;
+            }
+            width: 100%;
         }
-        img {
-            object-fit: contain;
-            max-width: 100%;
+        p {
+            margin-top: var(--group-small);
+            width: 100%;
         }
+
+        padding: var(--card-small-padding) 0;
+        border-bottom: var(--light-border);
+        &[open] {
+            summary::after {
+                content: '-';
+            }
+        }
+    }
+}
+
+.lastCTA {
+    margin: 0 calc(-1 * var(--body-padding));
+    padding: var(--body-padding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--gradient);
+    gap: var(--group-big);
+    h6 {
+        text-align: center;
+    }
+
+    .description {
+        text-align: center;
+        font-size: var(--body-size-3);
     }
 }
 

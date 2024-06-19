@@ -2,7 +2,8 @@ a.cta,
 a.secondary {
     display: block;
     width: max-content;
-    padding: var(--form-element-padding) calc(var(--form-element-padding) * 2);
+    padding: calc(var(--form-element-padding) * 1.2)
+        calc(var(--form-element-padding) * 3);
 
     border-radius: var(--form-element-radius);
     display: flex;
@@ -14,20 +15,24 @@ a.secondary {
     text-decoration: none;
     transition: var(--default-transition);
     text-align: center;
-    font-weight: 600;
+    font-weight: 800;
 
-    border: var(--light-border);
-    border-color: transparent;
-
-    outline-offset: 0px;
+    border: 2px solid var(--primary-400);
+    box-shadow: var(--button-shadow);
+    -webkit-box-shadow: var(--button-shadow);
+    font-size: var(--body-size-3);
 }
 
 a.cta {
+    color: #000;
     &:focus {
         box-shadow: var(--button-shadow);
         outline: var(--outline);
         box-shadow: var(--button-shadow);
-        scale: var(--scale);
+        scale: calc(2 - var(--scale));
+
+        box-shadow: inset var(--button-shadow);
+        -webkit-box-shadow: inset var(--button-shadow);
     }
 
     &:hover {
@@ -72,6 +77,13 @@ a.secondary {
             box-shadow: var(--button-shadow-reverse);
         }
     }
+}
+
+.cta.ctaBig {
+    padding: 15px 30px;
+    box-shadow: var(--button-shadow);
+    font-size: var(--body-size-3);
+    border: 3px solid var(--primary-400);
 }
 
 @media (max-width: 500px) {

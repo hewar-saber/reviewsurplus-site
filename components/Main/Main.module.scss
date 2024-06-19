@@ -1,5 +1,5 @@
 .main {
-    padding: var(--body-padding);
+    padding: var(--row-spacing) var(--body-padding);
     display: flex;
     flex-direction: column;
     gap: var(--row-spacing);

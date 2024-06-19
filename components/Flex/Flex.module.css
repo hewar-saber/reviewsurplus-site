@@ -1,0 +1,20 @@
+.smallRows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--group-small);
+    align-items: center;
+}
+
+.mediumRows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--group-medium);
+    align-items: center;
+}
+
+.bigRows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--group-big);
+    align-items: center;
+}

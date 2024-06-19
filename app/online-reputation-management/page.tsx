@@ -1,286 +1,249 @@
-import styles from './page.module.scss'
-import CTA from '@/components/CTA/CTA'
-import Image from 'next/image'
-
-import lessStressIcon from '@/public/icons/lessstress.svg'
-import appointmentIcon from '@/public/icons/appointment.svg'
-import timeIcon from '@/public/icons/Time.svg'
-import increaseIcon from '@/public/icons/increase.svg'
-import gearIcon from '@/public/icons/gear.svg'
-import starIcon from '@/public/icons/Star.svg'
 import Main from '@/components/Main/Main'
+import styles from './page.module.scss'
 import Highlight from '@/components/Highlight/Highlight'
-import LinkWrapper from '@/components/LinkWrapper/LinkWrapper'
+import CTA from '@/components/CTA/CTA'
+import FullLine from '@/components/FullLine/FullLine'
 import SmallCard, { Cards } from '@/components/SmallCard/SmallCard'
 
-import importIcon from '@/public/icons/import.svg'
-import emailIcon from '@/public/icons/email.svg'
-import analyseIcon from '@/public/icons/analyse.svg'
-import CaseStudies from '@/components/CaseStudies/CaseStudies'
-import FullLine from '@/components/FullLine/FullLine'
+import calendarIcon from '@/public/icons/calendar.svg'
+import { SmallRows } from '@/components/Flex/Flex'
+import noTrust from '@/public/icons/no-trust.svg'
+
+import researchIcon from '@/public/icons/research.svg'
+
+import trendDown from '@/public/icons/trend-down.svg'
+import warning from '@/public/icons/warning.svg'
+
+import starIcon from '@/public/icons/star.svg'
+import searchIcon from '@/public/icons/search.svg'
+import trendUp from '@/public/icons/trend-up.svg'
+
 export default function Page() {
     return (
-        <Main noPaddingTop>
+        <Main>
             <section className={styles.hero}>
-                <section className={styles.details}>
-                    <div className={styles.text}>
-                        <h1>
-                            <Highlight>Increase Revenue</Highlight> with More
-                            5-Star Reviews
-                        </h1>
-                        <p>
-                            Get <Highlight>48+ five-star reviews </Highlight> in{' '}
-                            <i>under two weeks </i>
-                            using our software.
-                        </p>
-                        <CTA />
-                    </div>
-                    <Image
-                        src='/images/socialproof.png'
-                        alt='Social Proof'
-                        width={379 * 1.3}
-                        height={63 * 1.3}
-                        style={{
-                            objectFit: 'contain'
-                        }}
-                    />
-                </section>
-                <picture>
-                    {/* Add a photo when width is less than 1000px */}
-                    <source
-                        media='(max-width: 1000px)'
-                        srcSet='/images/landing-2.webp'
-                        type='image/webp'
-                    />
-                    <Image
-                        src='/images/landing.webp'
-                        alt='Illustration of more Google reviews'
-                        width={871 * 0.5}
-                        height={614 * 0.4}
-                        className={styles.heroImage}
-                    />
-                </picture>
-            </section>
-            <section className={styles.stakes}>
-                <h2>
-                    Lack of Reviews is <Highlight>Costing You</Highlight> New
-                    Customers
-                </h2>
-                <p>
-                    <Highlight>
-                        <LinkWrapper>
-                            <a href='https://www.brightlocal.com/research/local-consumer-review-survey/'>
-                                76% of consumers&nbsp;
-                            </a>
-                        </LinkWrapper>
-                    </Highlight>
-                    read reviews before making a decision. How many people
-                    choose your competition because you{' '}
-                    <Highlight>lack reviews?</Highlight> The truth is, lack of
-                    reviews is already <Highlight>costing you</Highlight> a
-                    great deal!
+                <img
+                    src='/images/Robert Greene.webp'
+                    alt='Robert Greene'
+                    width='400'
+                />
+                <SmallRows>
+                    <h1>
+                        <Highlight>More Sales</Highlight> with Increased Reviews
+                    </h1>
+                </SmallRows>
+                <p className={styles.txt}>
+                    Get <strong>21+ five-star reviews</strong> in under{' '}
+                    <strong>19 days</strong> using our software.
                 </p>
-                <b>We understand you.</b>
-                <p>
-                    That&apos;s why we offer to help you increase your reviews
-                    to not only have a better reputation, but also rank better
-                    on Google, and attract new customers.
-                </p>
-                <CTA />
-            </section>
-            <section className={styles.value}>
-                <h3>
-                    More Reviews,
-                    <Highlight> More Customers</Highlight>, Less Stress
-                </h3>
-                <Cards>
-                    <SmallCard
-                        imgSrc={increaseIcon.src}
-                        imgWidth={30}
-                        imgAlt='More Customers'
-                        title='More Customers'
-                        description='You will get more 5-star reviews, resulting in better reputation, and increased revenue.'
-                    />
-
-                    <SmallCard
-                        imgSrc={timeIcon.src}
-                        imgAlt='Save Time'
-                        imgWidth={30}
-                        title='Save Time'
-                        description='You will no longer need to ask customers for reviews. No more awkward conversations + save time!'
-                    />
-
-                    <SmallCard
-                        imgSrc={lessStressIcon.src}
-                        imgAlt='Less Stress'
-                        title='Less Stress'
-                        imgWidth={50}
-                        description='You will no longer need to worry about your online reputation, The negative reviews will be buried'
-                    />
-                </Cards>
-                <CTA />
-            </section>
-            <section className={styles.caseStudies}>
-                <h4>Case Studies</h4>
-                <CaseStudies />
-            </section>
-            <section className={styles.ourPlan}>
-                <div className={styles.title}>
-                    <h4>You Can Too Get More Reviews!</h4>
-                </div>
-                <Cards>
-                    <SmallCard
-                        imgSrc={appointmentIcon.src}
-                        imgWidth={30}
-                        imgAlt='Researching Your Situation'
-                        title='Book a Call'
-                        description='Pick a time slot that fits your schedule.'
-                    />
-
-                    <SmallCard
-                        imgSrc={gearIcon.src}
-                        imgWidth={30}
-                        imgAlt='Set up'
-                        title='Set up'
-                        description='Upload your existing customer list, so you can get those 5-star review right away!'
-                    />
-                    <SmallCard
-                        imgSrc={starIcon.src}
-                        imgWidth={30}
-                        imgAlt='Success'
-                        title='Success'
-                        description='You now have more 5-star reviews, and as a result get more customers, and your revenue has increased.'
-                    />
-                </Cards>
-                <CTA />
-            </section>
-            <section className={styles.howWeDo}>
-                <div className={styles.title}>
-                    <h5>How Does It Work?</h5>
-                    <p>
-                        We&apos;ve built the most comprehensive reputation
-                        management software, and yet it&apos;s the easiest to
-                        use!
-                    </p>
-                </div>
-                <Cards>
-                    <SmallCard
-                        imgSrc={importIcon.src}
-                        imgWidth={30}
-                        imgAlt='Import Icon'
-                        title='Import Your Customer List'
-                        description='You can import your customer list, or add them manually.'
-                    />
-                    <SmallCard
-                        imgSrc={emailIcon.src}
-                        imgWidth={30}
-                        imgAlt='Send Out Review Requests'
-                        title='Send Out Review Requests'
-                        description='You can mass-send email/sms to all customers or one-by-one.'
-                    />
-
-                    <SmallCard
-                        imgSrc={analyseIcon.src}
-                        imgWidth={30}
-                        imgAlt='Track Reviews'
-                        title='Track Reviews'
-                        description='You can track all reviews, and reply to them, while adding new clients.'
-                    />
-                </Cards>
-                <CTA />
-            </section>
-
-            <section className={styles.explanatory}>
-                <h6>
-                    Achieve Top business Status: More Reviews, Trust, and
-                    customer
-                </h6>
-                <div className={styles.text}>
-                    <p>
-                        At Review Surplus, we know you want to dominate your
-                        local market. In order to achieve this, you need to
-                        establish trust with your customers through more 5-star
-                        reviews. The problem is, reviews don&apos;t write
-                        themselves, which makes you feel powerless and concerned
-                        about your online reputation.
-                    </p>
-                    <p>
-                        With the amazing service you offer, we believe you
-                        deserve far more appreciation and customers than you
-                        currently have. We understand the frustration that comes
-                        with knowing you provide top-notch service yet struggle
-                        to have this reflected in your online presence. It can
-                        feel like an uphill battle trying to encourage satisfied
-                        customers to share their positive experiences.
-                    </p>
-                    <p>
-                        That&apos;s why we want to help you improve your online
-                        reputation with more 5-star reviews. Here&apos;s how it
-                        works:
-                    </p>
-                    <ol>
-                        <li>
-                            You book a call, where we discuss your unique
-                            challenges, and whether this software is the right
-                            fit for your business
-                        </li>
-                        <li>
-                            We will set it up so you can start collecting those
-                            5-star review right away!
-                        </li>
-                        <li>
-                            You now more more customers thanks to the new 5-star
-                            reviews you have received
-                        </li>
-                    </ol>
-                    <p>
-                        So book a call now, so you no longer miss out on new
-                        customers because of insufficient reviews, and start
-                        attracting new customers and dominate your local area!
-                    </p>
-                </div>
-
-                <CTA />
+                <CTA labelEnabled />
             </section>
             <FullLine />
-            <section className={styles.faq}>
-                <h6>Frequently Asked Questions (FAQ)</h6>
-                <dl>
-                    <dt>
-                        <b>What are online reputation management software?</b>
-                    </dt>
-                    <dd>
-                        Reputation management software helps business owners
-                        manage their online reputation while collecting 5-star
-                        reviews. Our software helps business owners increase
-                        their reviews quickly and effortlessly.
-                    </dd>
-                    <dt>
-                        <b>How long does reputation management take?</b>
-                    </dt>
-                    <dd>
-                        With our reputation management software, you can expect
-                        to see results immediately. You can even upload your
-                        customer list to get a head start!
-                    </dd>
-                    <dt>
-                        <b>How do I get more reviews for my business?</b>
-                    </dt>
-                    <dd>
-                        You can get more reviews for your practice by asking
-                        your customers for reviews. Review Surplus helps you
-                        simplify this approach while collecting only 5-star
+
+            <section className={styles.stakes}>
+                <h2>Lack of Reviews is Costing You New Customers...</h2>
+                <p className={styles.description}>
+                    What good is traffic if there is no social proof to back up
+                    the quality of your services?
+                </p>
+                <Cards>
+                    <SmallCard
+                        imgSrc={noTrust.src}
+                        imgWidth={50}
+                        imgAlt='Lost Trust Icon'
+                        title='Lost Trust'
+                        description='A lack of reviews makes potential customers doubt the quality of your services or products.'
+                    />
+                    <SmallCard
+                        imgSrc={trendDown.src}
+                        imgWidth={50}
+                        imgAlt='Trend Down Icon'
+                        title='Lost Revenue'
+                        description='Bad reviews can directly impact sales and reduce your revenue.'
+                    />
+
+                    <SmallCard
+                        imgSrc={warning.src}
+                        imgWidth={50}
+                        imgAlt='Warning Icon'
+                        title='Bad First Impression'
+                        description='Without enough positive reviews, new customers may get a negative first impression that is hard to change.'
+                    />
+                </Cards>
+            </section>
+
+            <section className={styles.valueProposition} id='how'>
+                <h3>More 5-Star Reviews Solves Your Problem</h3>
+                <Cards>
+                    <SmallCard
+                        imgSrc={starIcon.src}
+                        imgWidth={50}
+                        imgAlt='Star Icon'
+                        title='Better Trust & Reputation'
+                        description='More five-star reviews build trust with new customers and strengthen your reputation.'
+                    />
+                    <SmallCard
+                        imgSrc={trendUp.src}
+                        imgWidth={50}
+                        imgAlt='Trend Up Icon'
+                        title='More Customers'
+                        description='Positive reviews can directly increase sales by convincing hesitant buyers to make a purchase.'
+                    />
+                    <SmallCard
+                        imgSrc={searchIcon.src}
+                        imgWidth={50}
+                        imgAlt='Search Icon'
+                        title='Higher Ranking'
+                        description='As a result of more reviews, your business will rank higher on Google.'
+                    />
+                </Cards>
+                <CTA />
+            </section>
+
+            <section className={styles.socialProof} id='work'>
+                <h4>Our Reputation Management Software WORKS</h4>
+                <figure className={styles.result}>
+                    <img
+                        src='/images/ORM-1.webp'
+                        alt='NurDent Dental Practice'
+                        width={400}
+                        loading='lazy'
+                    />
+                    <figcaption>
+                        <b>NurDent Dental Practice</b>
+                        <p>
+                            NurDent Dental Center increased its rating from 3.8
+                            to 4.1 stars on Google My Business and received 21
+                            new reviews, all in under 30 days!
+                        </p>
+                        <CTA
+                            style={{
+                                transform: 'rotate(var(--rotate))'
+                            }}
+                        />
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section className={styles.process}>
+                <h5>Simple Set Up</h5>
+                <p className={styles.description}>
+                    You can start uploading your customer list and receive
+                    reviews right away in three simple steps.
+                </p>
+                <Cards>
+                    <SmallCard
+                        imgWidth={50}
+                        imgSrc={calendarIcon.src}
+                        imgAlt='Calendar Icon'
+                        title='Book a Call'
+                        description='Choose a time slot that fits your schedule'
+                    />
+                    <SmallCard
+                        imgWidth={50}
+                        imgSrc={researchIcon.src}
+                        imgAlt='Set Up Icon'
+                        title='Set Up'
+                        description='We will set up the software & upload your customer list.'
+                    />
+                    <SmallCard
+                        imgWidth={50}
+                        imgSrc={starIcon.src}
+                        imgAlt='Star Icon'
+                        title='More Reviews & Sales'
+                        description='You now get more reviews, resulting in more sales!'
+                    />
+                </Cards>
+            </section>
+
+            <section className={styles.faq} id='faq'>
+                <h6>FAQ (Frequently Asked Questions)</h6>
+
+                <details>
+                    <summary>What is Online Reputation Management?</summary>
+                    <p>
+                        Online Reputation Management is the practice of shaping
+                        how people perceive your business online, e.g. Online
                         reviews.
-                    </dd>
-                    <dt>
-                        <b>How does reputation management work?</b>
-                    </dt>
-                    <dd>
-                        Review Surplus helps you send out SMS and email to your
-                        customers. This process is super easy and requires
-                        minimal effort on your end.
-                    </dd>
-                </dl>
+                    </p>
+                </details>
+
+                <details>
+                    <summary>How does the software work?</summary>
+                    <p>
+                        The software works by letting you add your customers or
+                        upload a list, then send review requests via SMS and/or
+                        email. It also protects you against negative reviews.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>How much does it cost?</summary>
+                    <p>
+                        The cost depends on how many SMS messages you plan to
+                        send. You can book a call to get a specific price.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Why are customer reviews important?</summary>
+                    <p>
+                        Customer reviews build trust and influence potential
+                        buyers&apos; decisions.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Can I customize the review requests?</summary>
+                    <p>
+                        Yes, our software lets you design custom email templates
+                        and create personalized SMS templates for review
+                        requests.
+                    </p>
+                </details>
+                <details>
+                    <summary>What platforms does the software support?</summary>
+                    <p>
+                        The software supports popular review platforms like
+                        Google, Yelp, Trustpilot, and Facebook.
+                    </p>
+                </details>
+                <details>
+                    <summary>How soon will I see results?</summary>
+                    <p>
+                        Many businesses see improvements in their ratings and
+                        reviews within 1-2 weeks.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Is there a free trial available?</summary>
+                    <p>
+                        We are no longer offering a free trial, the value of our
+                        software is clear. It&apos;s a take or leave it offer!
+                        (We suggest you take it!)
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Can I track my progress?</summary>
+                    <p>
+                        Yes, the software tracks your progress, including open
+                        rates, click rates, and review rates (how many reviews a
+                        certain email or SMS template has generated).{' '}
+                    </p>
+                </details>
+            </section>
+
+            <section className={styles.lastCTA}>
+                <h6>Stop Losing Customers</h6>
+
+                <p className={styles.description}>
+                    Let&apos;s get you a ton of 5-star reviews to bury those
+                    negative reviews and get you more sales.
+                </p>
+
+                <CTA labelEnabled />
             </section>
         </Main>
     )

@@ -19,6 +19,7 @@
 
         .link {
             color: var(--foreground-400);
+            font-weight: normal;
             transition: var(--transition);
 
             &:hover {
