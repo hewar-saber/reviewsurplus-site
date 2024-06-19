@@ -175,6 +175,7 @@ export default function Page() {
                         description='You now get more reviews, resulting in more sales!'
                     />
                 </Cards>
+                <CTA />
             </section>
 
             <section className={styles.faq} id='faq'>
