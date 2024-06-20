@@ -152,8 +152,11 @@
             font-size: var(--body-size-3);
             font-weight: 500;
 
-            &::marker {
-                content: '';
+            list-style: none;
+
+            &::marker,
+            &::-webkit-details-marker {
+                display: none;
             }
 
             &::after {

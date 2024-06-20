@@ -1,0 +1,35 @@
+.marqueeParent {
+    overflow: hidden;
+}
+
+.marquee {
+    display: flex;
+    gap: var(--group-medium);
+    align-items: center;
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: max-content;
+}
+
+.marquee > div {
+    display: flex;
+    gap: var(--group-medium);
+    align-items: center;
+    width: 100%;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 0.5 * var(--group-medium)));
+    }
+}

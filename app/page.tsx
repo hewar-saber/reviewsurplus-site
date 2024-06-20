@@ -30,6 +30,7 @@ import reasearchIconWhite from '@/public/icons/white-research.svg'
 
 import launchIcon from '@/public/icons/launch.svg'
 import launchIconWhite from '@/public/icons/white-launch.svg'
+import Buttons from '@/components/Buttons/Buttons'
 
 export default function Page() {
     return (
@@ -91,7 +92,7 @@ export default function Page() {
                 </Cards>
             </section>
 
-            <section className={styles.valueProposition}>
+            <section className={styles.valueProposition} id='how'>
                 <h3>A High-Conversion & Unique Website Solves Your Problem.</h3>
                 <Cards>
                     <SmallCard
@@ -122,21 +123,21 @@ export default function Page() {
                 <CTA />
             </section>
 
-            <section className={styles.socialProof}>
+            <section className={styles.socialProof} id='work'>
                 <h4>Our Tailored Designs Drive Sales for Our Clients</h4>
                 <p>
                     All our designs are tailor made to get the highest
                     conversion our clients can get. No cookie cutters, or
                     templates.
                 </p>
-                <section className={styles.projects}>
-                    <Projects></Projects>
-                </section>
-                <CTA
+                <Projects></Projects>
+                <Buttons
                     style={{
-                        transform: 'rotate(var(--rotate))'
+                        padding: '0 var(--body-padding)'
                     }}
-                />
+                >
+                    <CTA />
+                </Buttons>
             </section>
 
             <section className={styles.process}>

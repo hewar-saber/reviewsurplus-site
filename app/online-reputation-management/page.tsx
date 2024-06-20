@@ -20,9 +20,10 @@ import calendarIconWhite from '@/public/icons/white-calendar.svg'
 import researchIconWhite from '@/public/icons/white-research.svg'
 import trendDownWhite from '@/public/icons/white-trend-down.svg'
 import warningWhite from '@/public/icons/white-warning.svg'
-import starIconWhite from '@/public/icons/white-star.svg'
+import starIconWhite from '@/public/icons/white-Star.svg'
 import searchIconWhite from '@/public/icons/white-search.svg'
 import trendUpWhite from '@/public/icons/white-trend-up.svg'
+import noTrustWhite from '@/public/icons/white-no-trust.svg'
 
 export default function Page() {
     return (
@@ -60,7 +61,7 @@ export default function Page() {
                 </p>
                 <Cards>
                     <SmallCard
-                        darkThemeSrc={trendDownWhite.src}
+                        darkThemeSrc={noTrustWhite.src}
                         imgSrc={noTrust.src}
                         imgWidth={50}
                         imgAlt='Lost Trust Icon'
@@ -77,7 +78,7 @@ export default function Page() {
                     />
 
                     <SmallCard
-                        darkThemeSrc={trendDownWhite.src}
+                        darkThemeSrc={warningWhite.src}
                         imgSrc={warning.src}
                         imgWidth={50}
                         imgAlt='Warning Icon'
@@ -130,15 +131,13 @@ export default function Page() {
                     <figcaption>
                         <b>NurDent Dental Practice</b>
                         <p>
-                            NurDent Dental Center increased its rating from 3.8
-                            to 4.1 stars on Google My Business and received 21
-                            new reviews, all in under 30 days!
+                            NurDent Dental Center increased its rating{' '}
+                            <strong>from 3.8 to 4.1 stars</strong> on Google My
+                            Business and received{' '}
+                            <strong>21 new reviews</strong>, all in{' '}
+                            <strong>under 30 days</strong>!
                         </p>
-                        <CTA
-                            style={{
-                                transform: 'rotate(var(--rotate))'
-                            }}
-                        />
+                        <CTA />
                     </figcaption>
                 </figure>
             </section>

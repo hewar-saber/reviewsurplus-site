@@ -1,6 +1,7 @@
 .projects {
     display: flex;
-    gap: var(--group-medium);
+    /* gap: var(--group-medium); */
+    /* margin-right: var(--group-medium); */
 }
 
 .projects img {
