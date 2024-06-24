@@ -5,10 +5,10 @@ const nextConfig = {
         WEBSITE_URL: process.env.WEBSITE_URL,
         BOOKING_URL: process.env.BOOKING_URL
     },
-    experimental: {
-        swcMinify: false,
-        serverMinification: false
-    },
+    // experimental: {
+    //     swcMinify: false,
+    //     serverMinification: false
+    // },
     redirects: async () => {
         return [
             {

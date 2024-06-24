@@ -6,9 +6,9 @@
     gap: var(--group-big);
     background: var(--gradient-radial);
 
-    // margin: 0 calc(-1 * var(--body-padding));
-    // padding: var(--body-padding);
-
+    img {
+        max-width: 100%;
+    }
     h1 {
         text-align: center;
         max-width: var(--section-max-width);
@@ -54,27 +54,42 @@
 }
 
 .socialProof {
-    // display: flex;
-    // flex-direction: column;
-    // gap: var(--group-big);
-    // align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--group-big);
+    align-items: center;
 
-    // width: calc(100% + 2 * var(--body-padding));
-    // margin: 0 calc(-1 * var(--body-padding));
-    // // padding: var(--body-padding);
-    // background: var(--gradient-radial)
     h4 {
         text-align: center;
         max-width: var(--section-max-width);
-        padding: 0 var(--body-padding);
-        margin: 0 auto;
     }
-    p {
-        text-align: center;
+
+    .result {
+        display: flex;
+        gap: var(--group-big);
+        align-items: center;
         max-width: var(--section-max-width);
-        font-size: var(--body-size-3);
-        padding: 0 var(--body-padding);
-        margin: 0 auto;
+        flex-wrap: wrap;
+
+        img {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        figcaption {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--group-small);
+            align-items: start;
+            b {
+                font-size: var(--body-size-3);
+            }
+
+            p {
+                font-size: var(--body-size-1);
+            }
+        }
     }
 }
 
@@ -99,17 +114,15 @@
     }
 }
 
-.projects,
-.socialProof {
+.projects {
     display: flex;
     gap: var(--group-big);
     overflow-x: auto;
     margin: 0 calc(-1 * var(--body-padding));
-    height: max-content;
+    transform: var(--rorate);
     display: flex;
     flex-direction: column;
-    // overflow: hidden;
-    gap: var(--group-big);
+    gap: inherit;
 }
 
 .faq {
@@ -121,9 +134,9 @@
     gap: var(--group-big);
 
     max-width: var(--section-max-width);
+    width: 100%;
     margin: 0 auto;
 
-    width: 100%;
     background: var(--gradient-radial);
 
     h6 {
@@ -138,6 +151,7 @@
             cursor: pointer;
             font-size: var(--body-size-3);
             font-weight: 500;
+
             list-style: none;
 
             &::marker,

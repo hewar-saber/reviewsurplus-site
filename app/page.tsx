@@ -5,171 +5,173 @@ import CTA from '@/components/CTA/CTA'
 import FullLine from '@/components/FullLine/FullLine'
 import SmallCard, { Cards } from '@/components/SmallCard/SmallCard'
 
-import calendarIcon from '@/public/icons/calendar.svg'
-import calendarIconWhite from '@/public/icons/white-calendar.svg'
-
 import { SmallRows } from '@/components/Flex/Flex'
-import Projects from '@/components/Projects/Projects'
-import badCopy from '@/public/icons/bad-copy.svg'
-import badCopyWhite from '@/public/icons/white-bad-copy.svg'
-import badDesign from '@/public/icons/bad-design.svg'
-import badDesignWhite from '@/public/icons/white-bad-design.svg'
 import noTrust from '@/public/icons/no-trust.svg'
-import noTrustWhite from '@/public/icons/white-no-trust.svg'
 
-import goodCopy from '@/public/icons/good-copy.svg'
-import goodCopyWhite from '@/public/icons/white-good-copy.svg'
-
-import goodDesign from '@/public/icons/good-design.svg'
-import goodDesignWhite from '@/public/icons/white-good-design.svg'
-import goodWebsite from '@/public/icons/good-website.svg'
-import goodWebsiteWhite from '@/public/icons/white-good-website.svg'
-
+import calendarIcon from '@/public/icons/calendar.svg'
 import researchIcon from '@/public/icons/research.svg'
-import reasearchIconWhite from '@/public/icons/white-research.svg'
+import trendDown from '@/public/icons/trend-down.svg'
+import warning from '@/public/icons/warning.svg'
+import starIcon from '@/public/icons/Star.svg'
+import searchIcon from '@/public/icons/search.svg'
+import trendUp from '@/public/icons/trend-up.svg'
 
-import launchIcon from '@/public/icons/launch.svg'
-import launchIconWhite from '@/public/icons/white-launch.svg'
-import Buttons from '@/components/Buttons/Buttons'
+import calendarIconWhite from '@/public/icons/white-calendar.svg'
+import researchIconWhite from '@/public/icons/white-research.svg'
+import trendDownWhite from '@/public/icons/white-trend-down.svg'
+import warningWhite from '@/public/icons/white-warning.svg'
+import starIconWhite from '@/public/icons/white-Star.svg'
+import searchIconWhite from '@/public/icons/white-search.svg'
+import trendUpWhite from '@/public/icons/white-trend-up.svg'
+import noTrustWhite from '@/public/icons/white-no-trust.svg'
 
 export default function Page() {
     return (
         <Main>
             <section className={styles.hero}>
+                <picture>
+                    <source
+                        srcSet='/images/white-robert-greene.webp'
+                        media='(prefers-color-scheme: dark)'
+                    />
+                    <img
+                        src='/images/Robert Greene.webp'
+                        alt='Robert Greene'
+                        width='400'
+                    />
+                </picture>
                 <SmallRows>
-                    <p>7+ Years of experience</p>
                     <h1>
-                        Website that Converts{' '}
-                        <Highlight>Traffic to Sales</Highlight>
+                        <Highlight>More Sales</Highlight> with Increased Reviews
                     </h1>
                 </SmallRows>
                 <p className={styles.txt}>
-                    We turn your <strong>traffic into paying customers</strong>{' '}
-                    with persuasive copy and design.
+                    Get <strong>21+ five-star reviews</strong> in under{' '}
+                    <strong>19 days</strong> using our software.
                 </p>
                 <CTA labelEnabled />
             </section>
             <FullLine />
-            <section className={styles.projects}>
-                <Projects></Projects>
-            </section>
 
             <section className={styles.stakes}>
-                <h2>
-                    High traffic, low conversion? Your copy & design might be
-                    the issue...
-                </h2>
+                <h2>Lack of Reviews is Costing You New Customers...</h2>
                 <p className={styles.description}>
-                    Getting traffic is easy, converting the traffic to paying
-                    customers is hard...
+                    What good is traffic if there is no social proof to back up
+                    the quality of your services?
                 </p>
                 <Cards>
                     <SmallCard
-                        imgSrc={badCopy.src}
-                        darkThemeSrc={badCopyWhite.src}
+                        darkThemeSrc={noTrustWhite.src}
+                        imgSrc={noTrust.src}
                         imgWidth={50}
-                        imgAlt='Bad Copy Icon'
-                        title='Poor Copy'
-                        description="It's hard to convince people to buy without persuasive copy."
+                        imgAlt='Lost Trust Icon'
+                        title='Lost Trust'
+                        description='A lack of reviews makes potential customers doubt the quality of your services or products.'
                     />
                     <SmallCard
-                        imgSrc={badDesign.src}
-                        darkThemeSrc={badDesignWhite.src}
+                        darkThemeSrc={trendDownWhite.src}
+                        imgSrc={trendDown.src}
                         imgWidth={50}
-                        imgAlt='Ineffective Design Icon'
-                        title='Ineffective Design'
-                        description='Confusing design frustrates users, causing them to leave.'
+                        imgAlt='Trend Down Icon'
+                        title='Lost Revenue'
+                        description='Bad reviews can directly impact sales and reduce your revenue.'
                     />
 
                     <SmallCard
-                        imgSrc={noTrust.src}
-                        darkThemeSrc={noTrustWhite.src}
+                        darkThemeSrc={warningWhite.src}
+                        imgSrc={warning.src}
                         imgWidth={50}
-                        imgAlt='Lack of Trust Icon'
-                        title='Lack of Trust'
-                        description='Lack of testimonials, reviews and case studies affect conversion.'
+                        imgAlt='Warning Icon'
+                        title='Bad First Impression'
+                        description='Without enough positive reviews, new customers may get a negative first impression that is hard to change.'
                     />
                 </Cards>
             </section>
 
             <section className={styles.valueProposition} id='how'>
-                <h3>A High-Conversion & Unique Website Solves Your Problem.</h3>
+                <h3>More 5-Star Reviews Solves Your Problem</h3>
                 <Cards>
                     <SmallCard
-                        imgSrc={goodCopy.src}
-                        darkThemeSrc={goodCopyWhite.src}
-                        imgWidth={50}
-                        imgAlt='Pen writing Icon'
-                        title='Persuasive Copy'
-                        description="Convincing words that drive purchases. You'll receive persuasive copy."
-                    />
-                    <SmallCard
-                        imgSrc={goodDesign.src}
-                        darkThemeSrc={goodDesignWhite.src}
-                        imgWidth={50}
-                        imgAlt='Paintboard Icon'
-                        title='Timeless Design'
-                        description='A design that stands out and remains elegant over time.'
-                    />
-                    <SmallCard
-                        imgSrc={goodWebsite.src}
-                        darkThemeSrc={goodWebsiteWhite.src}
+                        darkThemeSrc={starIconWhite.src}
+                        imgSrc={starIcon.src}
                         imgWidth={50}
                         imgAlt='Star Icon'
-                        title='High Conversion'
-                        description='Visually appealing design that boosts your conversion rate.'
+                        title='Better Trust & Reputation'
+                        description='More five-star reviews build trust with new customers and strengthen your reputation.'
+                    />
+                    <SmallCard
+                        darkThemeSrc={trendUpWhite.src}
+                        imgSrc={trendUp.src}
+                        imgWidth={50}
+                        imgAlt='Trend Up Icon'
+                        title='More Customers'
+                        description='Positive reviews can directly increase sales by convincing hesitant buyers to make a purchase.'
+                    />
+                    <SmallCard
+                        darkThemeSrc={searchIconWhite.src}
+                        imgSrc={searchIcon.src}
+                        imgWidth={50}
+                        imgAlt='Search Icon'
+                        title='Higher Ranking'
+                        description='As a result of more reviews, your business will rank higher on Google.'
                     />
                 </Cards>
                 <CTA />
             </section>
 
             <section className={styles.socialProof} id='work'>
-                <h4>Our Tailored Designs Drive Sales for Our Clients</h4>
-                <p>
-                    All our designs are tailor made to get the highest
-                    conversion our clients can get. No cookie cutters, or
-                    templates.
-                </p>
-                <Projects></Projects>
-                <Buttons
-                    style={{
-                        padding: '0 var(--body-padding)'
-                    }}
-                >
-                    <CTA />
-                </Buttons>
+                <h4>Our Reputation Management Software WORKS</h4>
+                <figure className={styles.result}>
+                    <img
+                        src='/images/ORM-1.webp'
+                        alt='NurDent Dental Practice'
+                        width={400}
+                        loading='lazy'
+                    />
+                    <figcaption>
+                        <b>NurDent Dental Practice</b>
+                        <p>
+                            NurDent Dental Center increased its rating{' '}
+                            <strong>from 3.8 to 4.1 stars</strong> on Google My
+                            Business and received{' '}
+                            <strong>21 new reviews</strong>, all in{' '}
+                            <strong>under 30 days</strong>!
+                        </p>
+                        <CTA />
+                    </figcaption>
+                </figure>
             </section>
 
             <section className={styles.process}>
-                <h5>Simple Process</h5>
+                <h5>Simple Set Up</h5>
                 <p className={styles.description}>
-                    You can achieve a higher conversion rate too. Working with
-                    us involves three simple steps.
+                    You can start uploading your customer list and receive
+                    reviews right away in three simple steps.
                 </p>
                 <Cards>
                     <SmallCard
+                        darkThemeSrc={calendarIconWhite.src}
                         imgWidth={50}
                         imgSrc={calendarIcon.src}
-                        darkThemeSrc={calendarIconWhite.src}
                         imgAlt='Calendar Icon'
                         title='Book a Call'
                         description='Choose a time slot that fits your schedule'
                     />
                     <SmallCard
+                        darkThemeSrc={researchIconWhite.src}
                         imgWidth={50}
                         imgSrc={researchIcon.src}
-                        darkThemeSrc={reasearchIconWhite.src}
-                        imgAlt='Market Research Icon'
-                        title='Market Research'
-                        description='We will analyze your situation and research your market'
+                        imgAlt='Set Up Icon'
+                        title='Set Up'
+                        description='We will set up the software & upload your customer list.'
                     />
                     <SmallCard
+                        darkThemeSrc={starIconWhite.src}
                         imgWidth={50}
-                        imgSrc={launchIcon.src}
-                        darkThemeSrc={launchIconWhite.src}
-                        imgAlt='High Conversion Website Icon'
-                        title='High Conversion Website'
-                        description="We'll test and launch your high-conversion website and keep in touch."
+                        imgSrc={starIcon.src}
+                        imgAlt='Star Icon'
+                        title='More Reviews & Sales'
+                        description='You now get more reviews, resulting in more sales!'
                     />
                 </Cards>
                 <CTA />
@@ -179,88 +181,87 @@ export default function Page() {
                 <h6>FAQ (Frequently Asked Questions)</h6>
 
                 <details>
-                    <summary>Who are your designers?</summary>
+                    <summary>What is Online Reputation Management?</summary>
                     <p>
-                        ReviewSurplus is a one-man agency, so you&apos;ll work
-                        directly with Hewar, the founder. This guarantees our
-                        clients always receive the highest quality.
+                        Online Reputation Management is the practice of shaping
+                        how people perceive your business online, e.g. Online
+                        reviews.
                     </p>
                 </details>
 
                 <details>
-                    <summary>
-                        How long does it take to complete a project?
-                    </summary>
+                    <summary>How does the software work?</summary>
                     <p>
-                        Depending on the project, it might take days to weeks.
-                        Simple landing pages take usually 2-7 days while big
-                        websites might take 1-2 week.
+                        The software works by letting you add your customers or
+                        upload a list, then send review requests via SMS and/or
+                        email. It also protects you against negative reviews.
                     </p>
                 </details>
 
                 <details>
-                    <summary>
-                        How do you ensure the website is high-converting?
-                    </summary>
+                    <summary>How much does it cost?</summary>
                     <p>
-                        We use persuasive copywriting and timeless design to
-                        ensure your website is high-converting.
+                        The cost depends on how many SMS messages you plan to
+                        send. You can book a call to get a specific price.
                     </p>
                 </details>
 
                 <details>
-                    <summary>What industries do you work with?</summary>
+                    <summary>Why are customer reviews important?</summary>
                     <p>
-                        We work with all industries, but we specialize in
-                        e-commerce, SaaS, and service-based businesses.
+                        Customer reviews build trust and influence potential
+                        buyers&apos; decisions.
                     </p>
                 </details>
 
                 <details>
-                    <summary>What are your prices?</summary>
+                    <summary>Can I customize the review requests?</summary>
                     <p>
-                        Our prices vary depending on the project. Book a call to
-                        get a quote.
+                        Yes, our software lets you design custom email templates
+                        and create personalized SMS templates for review
+                        requests.
                     </p>
                 </details>
                 <details>
-                    <summary>What technologies do you use?</summary>
+                    <summary>What platforms does the software support?</summary>
                     <p>
-                        Depending on the project, we might recommend Next.js,
-                        Framer, Wordpress or even other frameworks.
+                        The software supports popular review platforms like
+                        Google, Yelp, Trustpilot, and Facebook.
                     </p>
                 </details>
                 <details>
-                    <summary>What if I don&apos;t like the design?</summary>
+                    <summary>How soon will I see results?</summary>
                     <p>
-                        We offer unlimited revisions until you are satisfied
-                        with the design.
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Do you offer maintenance?</summary>
-                    <p>
-                        Yes, we offer maintenance plans to keep your website
-                        up-to-date and secure.
+                        Many businesses see improvements in their ratings and
+                        reviews within 1-2 weeks.
                     </p>
                 </details>
 
                 <details>
-                    <summary>Can I get a refund?</summary>
+                    <summary>Is there a free trial available?</summary>
                     <p>
-                        We do not offer refunds, but we offer unlimited
-                        revisions until you are satisfied with the design.
+                        We are no longer offering a free trial, the value of our
+                        software is clear. It&apos;s a take or leave it offer!
+                        (We suggest you take it!)
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Can I track my progress?</summary>
+                    <p>
+                        Yes, the software tracks your progress, including open
+                        rates, click rates, and review rates (how many reviews a
+                        certain email or SMS template has generated).{' '}
                     </p>
                 </details>
             </section>
 
             <section className={styles.lastCTA}>
-                <h6>Stop Losing Leads Now</h6>
+                <h6>Stop Losing Customers</h6>
 
                 <p className={styles.description}>
-                    Let&apos;s build you a website that catches all the leads.
-                    No more losing leads.
+                    Let&apos;s get you a ton of 5-star reviews to bury those
+                    negative reviews and get you more sales.
                 </p>
 
                 <CTA labelEnabled />

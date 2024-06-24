@@ -16,7 +16,7 @@ export default function Marquee({
 
     useEffect(() => {
         const marqueeInner = marqueeInnerRef.current!
-        const duration = marqueeInner.scrollWidth / 200
+        const duration = marqueeInner.scrollWidth / 10
 
         gsap.to(marqueeInner, {
             xPercent: -50,
